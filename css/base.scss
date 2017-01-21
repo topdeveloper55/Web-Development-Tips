@@ -1,0 +1,30 @@
+@import "_posts.scss";
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+  background-color: #cf1d35;
+	display: flex;
+	font-size: 20px;
+	justify-content: space-around;
+	padding: 10px;
+}
+
+nav a {
+	color: white;
+}
+
+.contact_container,
+.main_container,
+.posts_container,
+.about_container {
+	align-items: center;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	width: 100%;
+}

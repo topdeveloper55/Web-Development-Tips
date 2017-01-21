@@ -1,0 +1,12 @@
+.post {
+	box-sizing: border-box;
+	background-color: rgba(0,0,0,.1);
+	flex: 1;
+	max-width: 800px;
+	margin: 10px;
+	padding: 10px;
+}
+
+.post p {
+	text-indent: 10px;
+}
