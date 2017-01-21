@@ -5,11 +5,11 @@ class Header extends React.Component{
   render() {
     return (
       <header>
-        <nav>
-    			<Link to="/">Home</Link>
-          <Link to="/posts">Posts</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+        <nav className="navbar">
+    			<Link className="navLink" to="/">Home</Link>
+          <Link className="navLink" to="/posts">Posts</Link>
+          <Link className="navLink" to="/about">About</Link>
+          <Link className="navLink" to="/contact">Contact</Link>
     		</nav>
       </header>
     )

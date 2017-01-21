@@ -19,15 +19,12 @@ module.exports = {
         loaders: ['style', 'css', 'sass']
       },
       {
-        test: /\.woff$/,
-        loader: "file-loader"
+        test: /\.(woff|otf)$/g,
+        loader: "url-loader?name=./fonts/[name].[ext]"
       },
       {
         test: /\.(jpg|png)$/,
-        loader: "file-loader",
-        options: {
-          name: '[path][name].[hash].[ext]'
-        }
+        loader: "url-loader?name=./images/[name].[ext]"
       }
     ]
   }

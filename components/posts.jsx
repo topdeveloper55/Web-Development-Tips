@@ -1,12 +1,17 @@
 import React from 'react';
-
+import PostData from '../data/postData.jsx';
+import { Link } from 'react-router';
 class Post extends React.Component {
 	render() {
+		let mainImage = this.props.mainImage ? <img src={this.props.mainImage}/> : "";
 		return (
 			<div className="post">
+				<div className="mainImage">{mainImage}</div>
 				<h2>{this.props.title}</h2>
 				<time>{this.props.time}</time>
+
 				<p>{this.props.content}</p>
+				<Link to={`/posts/${this.props.id}`}>Read More..</Link>
 			</div>
 		)
 	}
@@ -16,26 +21,13 @@ class Post extends React.Component {
 
 class Posts extends React.Component {
 	render() {
+		let AllPosts = PostData.map(x => {
+			return <Post key={x.id} id={x.id} title={x.title} time={x.time} mainImage={x.mainImage} content={x.content}/>
+		})
 		return (
 			<div className="posts_container">
 				<h1>Posts</h1>
-				<Post
-					title="Hello World"
-					content="Lionfish kelpfish Pacific viperfish, bocaccio electric
-					stargazer scat. Crucian carp pumpkinseed ghost knifefish clown loach
-					bluntnose minnow bangus tiger shark angelfish? Prowfish--elephant fish
-					lemon sole, temperate ocean-bass yellowtail clownfish sabertooth fish
-					clown loach, pencilsmelt, queen triggerfish? Weever yellowtail horse
-					mackerel, queen danio New Zealand smelt flagblenny powen. Airsac catfish
-					freshwater shark Black angelfish kissing gourami tigerperch cowfish roundhead.
-					Porbeagle shark Jack Dempsey ghost pipefish; white shark peamouth
-					large-eye bream. Albacore louvar livebearer queen parrotfish sea
-					dragon; torpedo morid cod sardine pilchard ropefish Ganges shark dory,
-					 prickly shark flier threadfin cichlid. Pigfish mora; climbing perch
-					 trout; perch; pike characid snubnose eel snake eel fingerfish, kokopu;
-					  crappie pomfret halibut slimy mackerel barramundi."
-					time="11/14/2017"
-					/>
+				{AllPosts}
 			</div>
 		)
 	}

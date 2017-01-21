@@ -1,12 +1,25 @@
 .post {
+	position:relative;
 	box-sizing: border-box;
 	background-color: rgba(0,0,0,.1);
 	flex: 1;
 	max-width: 800px;
+	min-width: 300px;
 	margin: 10px;
 	padding: 10px;
 }
 
 .post p {
 	text-indent: 10px;
+	font-family: "Ariel";
+	font-size:18px;
+	font-weight:500;
+	line-height:30px;
+}
+
+.mainImage {
+	float:top;
+	img {
+		width:150px;
+	}
 }
