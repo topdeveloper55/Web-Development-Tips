@@ -1,7 +1,6 @@
 @import "_posts.scss";
-@font-face{font-family: "Adam"; src: url('../fonts/ADAM_PRO.woff') format("woff")};
-@font-face{font-family: "Igra"; src: url('../fonts/IgraSans.woff') format("woff")};
-@font-face{font-family: "ButlerLight"; src: url('../fonts/Butler-Bold.woff') format("woff")};
+@font-face{font-family: "Igra"; src: url('../fonts/IgraSans.woff') format('woff')};
+@font-face{font-family: "ButlerBold"; src: url('../fonts/Butler-Bold.woff') format("woff")};
 html,
 body {
 	margin: 0;
@@ -28,7 +27,7 @@ h1 {
 }
 
 h2 {
-	font-family: "ButlerLight";
+	font-family: "ButlerBold";
 	font-weight:bold;
 	letter-spacing:2px;
 }

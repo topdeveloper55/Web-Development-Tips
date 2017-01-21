@@ -19,7 +19,7 @@ module.exports = {
         loaders: ['style', 'css', 'sass']
       },
       {
-        test: /\.(woff|otf)$/g,
+        test: /\.(woff|otf)$/,
         loader: "url-loader?name=./fonts/[name].[ext]"
       },
       {
