@@ -3,14 +3,14 @@ import PostData from '../data/postData.jsx';
 import { Link } from 'react-router';
 class Post extends React.Component {
 	render() {
-		let mainImage = this.props.mainImage ? <img src={this.props.mainImage}/> : "";
+		let mainImage = this.props.mainImage ? <img src={`../img/${this.props.mainImage}`}/> : "";
 		return (
 			<div className="post">
 				<div className="mainImage">{mainImage}</div>
 				<h2>{this.props.title}</h2>
 				<time>{this.props.time}</time>
 
-				<p>{this.props.content}</p>
+				<p>{this.props.content.slice(0, 200) + "..."}</p>
 				<Link to={`/posts/${this.props.id}`}>Read More..</Link>
 			</div>
 		)

@@ -1,0 +1,25 @@
+import React from 'react';
+import Layout from './components/layout.jsx';
+import Home from './components/home.jsx';
+import Posts from './components/posts.jsx';
+import PostPage from './components/post.jsx';
+import About from './components/about.jsx';
+import Contact from './components/contact.jsx';
+import NotFound from './components/404.jsx';
+
+import {Route, IndexRoute} from 'react-router';
+
+const routes = (
+  <Route path="/" component={Layout}>
+    <IndexRoute component={Home}/>
+    <Route path="posts">
+      <IndexRoute component={Posts}/>
+      <Route path=":id" component={PostPage}/>
+    </Route>
+    <Route path="about" component={About}/>
+    <Route path="contact" component={Contact}/>
+    <Route path="*" component={NotFound}/>
+  </Route>
+)
+
+export default routes;
