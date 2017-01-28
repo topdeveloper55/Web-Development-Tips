@@ -11,7 +11,7 @@ class Post extends React.Component {
 				<h2>{this.props.title}</h2>
 				<time>{this.props.time}</time>
 
-				<p>{this.props.content.slice(0, 200) + "..."}</p>
+				<p>{this.props.intro.slice(0, 200) + "..."}</p>
 				<Link to={`/posts/${this.props.id}`}>Read More..</Link>
 			</div>
 		)
@@ -23,7 +23,7 @@ class Post extends React.Component {
 class Posts extends React.Component {
 	render() {
 		let AllPosts = PostData.map(x => {
-			return <Post key={x.id} id={x.id} title={x.title} time={x.time} mainImage={x.mainImage} content={x.content}/>
+			return <Post key={x.id} id={x.id} title={x.title} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>
 		})
 		return (
 			<div className="posts_container">
@@ -34,7 +34,7 @@ class Posts extends React.Component {
 						{name: "description", content: "Posts page for WebsiteDevTips"}
 					]}
 				/>
-				{AllPosts}
+			{AllPosts}
 			</div>
 		)
 	}
