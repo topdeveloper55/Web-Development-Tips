@@ -34,7 +34,7 @@ const PostData = [
         }
       </Highlight>
       <p>
-      Another use I like to use the arrow functions for is in functional programming. For example, you could map out an array of numbers like so..
+      Another use for arrow functions is in functional programming. For example, you could map out an array of numbers like so..
       </p>
       <Highlight className="javascript">
         {

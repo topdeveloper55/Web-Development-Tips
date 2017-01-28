@@ -18,31 +18,25 @@ module.exports = {
           presets: ['react', 'es2015']
         }
       },
-      /*{
-        test: /.(jsx|js)$/,
-        loader: 'babel-loader',
-        exclude: '/node_modules/',
-        query: {
-          presets: ['es2015', 'react', 'stage-0']
-        }
-      },*/
       {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
       },
       {
-        test: /\.(woff|otf)$/,
-        loader: "url-loader?name=./fonts/[name].[ext]"
+        test: /\.(woff|otf|ttf|svg)$/,
+        loader: "file?name=../fonts/[name].[ext]"
       },
       {
         test: /\.(jpg|png)$/,
-        loader: "file?name=[hash].[ext]"
+        loader: "file?name=../img/[hash].[ext]"
       }
     ]
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),

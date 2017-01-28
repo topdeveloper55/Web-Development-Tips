@@ -12,7 +12,7 @@ class Post extends React.Component {
 				<time>{this.props.time}</time>
 
 				<p>{this.props.intro.slice(0, 200) + "..."}</p>
-				<Link to={`/posts/${this.props.id}`}>Read More..</Link>
+				<Link className="baseBtn absoluteBtn" to={`/posts/${this.props.id}`}>Read More</Link>
 			</div>
 		)
 	}
@@ -27,7 +27,7 @@ class Posts extends React.Component {
 		})
 		return (
 			<div className="posts_container">
-				<h1>Posts</h1>
+				<h1 className="header">Posts</h1>
 				<Helmet
 					title={"Posts - WebsiteDevTips"}
 					meta={[

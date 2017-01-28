@@ -1,4 +1,5 @@
 import React from 'react';
+//import my_image from 'HelloWorld.jpg';
 import Helmet from 'react-helmet';
 class About extends React.Component {
 	render() {
@@ -11,6 +12,7 @@ class About extends React.Component {
 							{name: "description", content: "About page for WebsiteDevTips"}
 						]}
 				/>
+				<img style={{width: "200px"}} src="../img/my_image.jpg"/>
 
 				<p>My personal website (wip)</p>
 

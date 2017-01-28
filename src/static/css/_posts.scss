@@ -1,12 +1,18 @@
 .post {
 	position:relative;
 	box-sizing: border-box;
-	background-color: rgba(0,0,0,.1);
-	flex: 1;
+	background-color: #FFFAFF;
+	flex: 1 0 50%;
 	max-width: 800px;
+	width: 50%;
 	min-width: 300px;
+	min-height:400px;
 	margin: 10px;
 	padding: 10px;
+	border-radius:4px;
+	box-shadow:5px 5px 6px rgba(0,0,0,.2), inset 0px 0px 20px rgba(0,0,0,.2);
+	border: 1px solid lighten(#212A34,10%);
+	border-top: 5px solid #212A34;
 }
 
 .post p {
@@ -15,6 +21,7 @@
 	font-size:18px;
 	font-weight:500;
 	line-height:30px;
+	margin: 40px 0px;
 }
 
 .mainImage {

@@ -2,15 +2,34 @@
 @import "_post.scss";
 @import "_dark.scss";
 @font-face{font-family: "Igra"; src: url('../fonts/IgraSans.woff') format('woff')};
-@font-face{font-family: "ButlerBold"; src: url('../fonts/Butler-Bold.woff') format("woff")};
+@font-face{font-family: "ButlerBold";
+	src: url('../fonts/Butler.ttf') format('truetype'),
+	url('../fonts/Butler.woff') format('woff');
+};
 html,
 body {
 	margin: 0;
 	padding: 0;
 }
+html {
+	background: rgba(255,255,255,.7) url('../img/background.png') repeat;
+	background-attachment:fixed;
+	&:before {
+		content: '';
+		position:fixed;
+		top:0;
+		right:0;
+		left:0;
+		bottom:0;
+		background-image: linear-gradient(rgba(255,255,255,.9), white);
+		background-attachment:fixed;
+		z-index:0;
+	}
+}
 
 .navbar {
-  background-color: #cf1d35;
+  background-color: #212A34;
+	border-bottom:5px solid #49B293;
 	display: flex;
 	font-size: 20px;
 	justify-content: space-around;
@@ -21,17 +40,20 @@ body {
 	letter-spacing:2px;
 	padding:0px;
 	height:40px;
+	position:relative;
+	z-index:2;
 }
 
 h1 {
 	font-family: "Igra";
-	font-weight:900;
+	text-shadow:2px 2px white;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 h2 {
 	font-family: "ButlerBold";
-	font-weight:bold;
-	letter-spacing:2px;
+	text-shadow:2px 2px white;
 }
 
 .navLink {
@@ -43,9 +65,25 @@ h2 {
 	text-decoration:none;
 	transition: .2s background;
 	&:hover {
-		background:rgba(0,0,0,.1);
+		background:lighten(#212A34,10%);
 		transition: .2s background;
 	}
+}
+
+.baseBtn {
+	font-family: sans-serif, "Ariel";
+	padding:5px;
+	font-size:12px;
+	background:#3B2C35;
+	color:white;
+	text-decoration:none;
+	border-radius:2px;
+	box-shadow:inset 3px 3px rgba(255,255,255,.2),inset -3px -3px rgba(0,0,0,.2);
+}
+
+.absoluteBtn {
+	position:absolute;
+	bottom:10px;
 }
 
 .contact_container,
@@ -57,4 +95,15 @@ h2 {
 	flex-flow: column wrap;
 	justify-content: center;
 	width: 100%;
+	position:relative;
+	z-index:2;
+}
+
+.posts_container {
+	flex-flow: row wrap;
+	align-items:flex-start;
+	.header {
+		min-width:100%;
+		text-align:center;
+	}
 }

@@ -7,7 +7,7 @@ class PostPage extends React.Component {
   render() {
     const id = this.props.params.id;
     const CurrentPost = PostData.filter(post => post.id == id)[0];
-    console.log(CurrentPost.content);
+
     return (
       <div className="post postPageContainer">
         <img src={`../img/${CurrentPost.mainImage}`}/>
@@ -20,7 +20,7 @@ class PostPage extends React.Component {
 				/>
         <time>{CurrentPost.time}</time>
         <div className="postBody">{CurrentPost.content}</div>
-        <Link to="/posts">Go Back to Posts</Link>
+        <Link className="baseBtn" to="/posts">Go Back to Posts</Link>
       </div>
     )
   }

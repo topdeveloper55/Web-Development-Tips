@@ -13,7 +13,7 @@ class Post extends React.Component {
 				<time>{this.props.time}</time>
 
 				<p>{this.props.intro.slice(0, 200) + "..."}</p>
-				<Link to={`/posts/${this.props.id}`}>Read More..</Link>
+				<Link className="baseBtn absoluteBtn" to={`/posts/${this.props.id}`}>Read More</Link>
 			</div>
 		)
 	}
