@@ -1,6 +1,7 @@
 import React from 'react';
 import PostData from '../data/postData.jsx';
 import { Link } from 'react-router';
+import Helmet from 'react-helmet';
 
 class PostPage extends React.Component {
   render() {
@@ -10,6 +11,12 @@ class PostPage extends React.Component {
       <div className="post postPageContainer">
         <img src={`../img/${CurrentPost.mainImage}`}/>
         <h1>{CurrentPost.title}</h1>
+        <Helmet
+					title={CurrentPost.title + " - WebsiteDevTips"}
+					meta={[
+						{name: "description", content: `Post page for WebsiteDevTips - ${CurrentPost.title}`}
+					]}
+				/>
         <time>{CurrentPost.time}</time>
         <p>{CurrentPost.content}</p>
         <Link to="/posts">Go Back to Posts</Link>

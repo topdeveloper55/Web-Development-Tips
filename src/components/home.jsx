@@ -1,6 +1,7 @@
 import React from 'react';
 import PostData from '../data/postData.jsx';
 import { Link } from 'react-router';
+import Helmet from 'react-helmet';
 class Post extends React.Component {
 	render() {
 		let mainImage = this.props.mainImage ? <img src={`/img/${this.props.mainImage}`}/> : "";
@@ -29,7 +30,12 @@ class Home extends React.Component {
     return (
       <div className="home_container">
         <h1>Home</h1>
-
+				<Helmet
+					title="Home - WebsiteDevTips"
+					meta={[
+						{name: "description", content: "Home page for WebsiteDevTips"}
+					]}
+				/>
         <h2>Latest Posts</h2>
         {Posts}
       </div>
