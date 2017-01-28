@@ -21,15 +21,13 @@
     "react-ga": "^2.1.2",
     "react-router": "^3.0.2",
     "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "react-helmet": "^4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node src/server.js --presets es2015,react,stage-0"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "react-helmet": "^4.0.0"
-  }
+  "license": "ISC"
 }
