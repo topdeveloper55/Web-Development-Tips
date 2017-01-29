@@ -22,11 +22,16 @@ export class Tags extends React.Component {
 
 export class TagsPage extends React.Component {
   render() {
+    let postTags = PostData.map(post => post.tags).join(',');
     return (
       <div className="tags_container">
 				<h1 className="pageHeader">Tags</h1>
 				<Helmet
 					title={"Tags - WebsiteDevTips"}
+          meta={[
+            {name: "description",content: `WebsiteDevTips tags - Here you can find tags that group posts by related material. Programming, coding, tips grouped into tagged sections.`},
+            {name: "keywords", content: `${postTags}`}
+          ]}
 				/>
 			<Tags/>
 			</div>
