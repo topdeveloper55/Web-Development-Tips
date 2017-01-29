@@ -3,6 +3,8 @@ import Layout from './components/layout.jsx';
 import Home from './components/home.jsx';
 import Posts from './components/posts.jsx';
 import PostPage from './components/post.jsx';
+import {TagsPage} from './components/tags.jsx';
+import TagPage from './components/tag.jsx';
 import About from './components/about.jsx';
 import Contact from './components/contact.jsx';
 import NotFound from './components/404.jsx';
@@ -14,7 +16,11 @@ const routes = (
     <IndexRoute component={Home}/>
     <Route path="posts">
       <IndexRoute component={Posts}/>
-      <Route path=":id" component={PostPage}/>
+      <Route path=":name" component={PostPage}/>
+    </Route>
+    <Route path="tags">
+      <IndexRoute component={TagsPage}/>
+      <Route path=":name" component={TagPage}/>
     </Route>
     <Route path="about" component={About}/>
     <Route path="contact" component={Contact}/>

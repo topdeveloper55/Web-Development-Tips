@@ -1,6 +1,7 @@
 @import "_posts.scss";
 @import "_post.scss";
 @import "_dark.scss";
+@import "_tags.scss";
 @font-face{font-family: "Igra"; src: url('../fonts/IgraSans.woff') format('woff')};
 @font-face{font-family: "ButlerBold";
 	src: url('../fonts/Butler.ttf') format('truetype'),
@@ -88,7 +89,8 @@ h2 {
 .contact_container,
 .home_container,
 .posts_container,
-.about_container {
+.about_container,
+.tags_container {
 	align-items: center;
 	display: flex;
 	flex-flow: column wrap;
@@ -97,21 +99,36 @@ h2 {
 	position:relative;
 	z-index:2;
 }
+
+.pageHeader, .header {
+	min-width:100%;
+	text-align:center;
+}
+
 .home_container {
-	.pageHeader, .latestPosts {
-		min-width:100%;
-		text-align:center;
-	}
 	@media(max-width: 1200px) {
 		flex-flow: row wrap;
 		align-items:flex-start;
 	}
 }
-.posts_container {
+
+.posts_container, .home_container{
 	flex-flow: row wrap;
 	align-items:flex-start;
-	.pageHeader {
-		min-width:100%;
-		text-align:center;
+}
+.popularTags {
+	position:relative;
+	min-width:300px;
+	max-width:300px;
+	padding-bottom:100px;
+	.tags {
+		padding-top:10px;
 	}
+}
+
+.latestPosts {
+	height:100%;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:center;
 }

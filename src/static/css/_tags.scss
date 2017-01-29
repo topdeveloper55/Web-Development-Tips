@@ -1,0 +1,30 @@
+.tag {
+	background:red;
+	margin:2px;
+	padding:5px;
+	font-size:10px;
+	color:white;
+	font-family:sans-serif;
+	opacity:.7;
+  text-decoration: none;
+	&:hover {
+		opacity:1;
+		cursor:pointer;
+	}
+}
+
+.tags {
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:space-between;
+	margin-bottom:10px;
+}
+
+.tagsAbsolute {
+  position:absolute;
+  bottom:15px;
+  padding:5px;
+  right:10px;
+  display:flex;
+  justify-content:space-between;
+}

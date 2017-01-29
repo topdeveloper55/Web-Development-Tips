@@ -5,8 +5,8 @@ import Helmet from 'react-helmet';
 
 class PostPage extends React.Component {
   render() {
-    const id = this.props.params.id;
-    const CurrentPost = PostData.filter(post => post.id == id)[0];
+    const name = this.props.params.name;
+    const CurrentPost = PostData.filter(post => post.name == name)[0];
 
     return (
       <div className="post postPageContainer">

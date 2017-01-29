@@ -3,7 +3,8 @@ import Highlight from 'react-highlight';
 import { Link } from 'react-router';
 const PostData = [
   {
-    id: 2,
+    id: 1,
+    name: "es6-arrow-functions",
     title: "ES6 Arrow Functions",
     time: "1/27/2017",
     mainImage: "ArrowFunction.jpg",
@@ -72,7 +73,8 @@ const PostData = [
     content: "For those who have a firm grasp of JavaScript or consider themselves intermediate JavaScript programmers, I would like to offer some resource to."
   },*/
   {
-    id: 0,
+    id:0,
+    name: "hello-world",
     title: "Hello World",
     time: "1/21/2017",
     mainImage: "HelloWorld.jpg",
