@@ -9,7 +9,8 @@ class About extends React.Component {
 				<Helmet
 						title="About - WebsiteDevTips"
 						meta={[
-							{name: "description", content: "About page for WebsiteDevTips"}
+							{name: "description", content: "About page for websitedevtips - learn more about the project and me."},
+							{name: "keywords", content: "websitedevtips.com,about,about page,about websitedevtips,websitedevtips about"}
 						]}
 				/>
 				<img style={{width: "200px"}} src="../img/my_image.jpg"/>

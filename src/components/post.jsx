@@ -10,15 +10,20 @@ class PostPage extends React.Component {
 
     return (
       <div className="post postPageContainer">
-        <img src={`../img/${CurrentPost.mainImage}`}/>
-        <h1>{CurrentPost.title}</h1>
         <Helmet
-					title={CurrentPost.title + " - WebsiteDevTips"}
-					meta={[
-						{name: "description", content: `Post page for WebsiteDevTips - ${CurrentPost.title}`}
-					]}
-				/>
-        <time>{CurrentPost.time}</time>
+          title={CurrentPost.title + " - WebsiteDevTips"}
+          meta={[
+            {name: "description", content: `WebsiteDevTips - ${CurrentPost.title} ${CurrentPost.introduction}`},
+            {name: "keywords", content: `${CurrentPost.keywords}`}
+          ]}
+        />
+        <div className="postHeader">
+          <img src={`../img/${CurrentPost.mainImage}`}/>
+          <h1>{CurrentPost.title}</h1>
+
+          <time>{CurrentPost.time}</time>
+        </div>
+
         <div className="postBody">{CurrentPost.content}</div>
         <Link className="baseBtn" to="/posts">Go Back to Posts</Link>
       </div>

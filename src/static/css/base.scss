@@ -33,13 +33,12 @@ html {
 	display: flex;
 	font-size: 20px;
 	justify-content: space-around;
-	align-items:center;
 	padding: 10px;
 	font-family: "Igra";
 	font-weight:bold;
 	letter-spacing:2px;
 	padding:0px;
-	height:40px;
+	line-height:40px;
 	position:relative;
 	z-index:2;
 }
@@ -83,7 +82,7 @@ h2 {
 
 .absoluteBtn {
 	position:absolute;
-	bottom:10px;
+	bottom:20px;
 }
 
 .contact_container,
@@ -98,11 +97,20 @@ h2 {
 	position:relative;
 	z-index:2;
 }
-
+.home_container {
+	.pageHeader, .latestPosts {
+		min-width:100%;
+		text-align:center;
+	}
+	@media(max-width: 1200px) {
+		flex-flow: row wrap;
+		align-items:flex-start;
+	}
+}
 .posts_container {
 	flex-flow: row wrap;
 	align-items:flex-start;
-	.header {
+	.pageHeader {
 		min-width:100%;
 		text-align:center;
 	}
