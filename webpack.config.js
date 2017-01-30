@@ -29,6 +29,10 @@ module.exports = {
       {
         test: /\.(jpg|png)$/,
         loader: "file?name=../img/[hash].[ext]"
+      },
+      {
+        test: /\.mp4$/,
+        loader: "file?name=../videos/[name].[ext]&mimetype=video/mp4"
       }
     ]
   },

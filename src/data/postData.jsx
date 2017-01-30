@@ -1,6 +1,7 @@
 import React from 'react';
 import Highlight from 'react-highlight';
 import { Link } from 'react-router';
+import myVid from '../static/videos/ES6-Arrow-Functions.mp4';
 const PostData = [
   {
     id: 1,
@@ -57,8 +58,12 @@ const PostData = [
       <p>
       To be clear, arrow functions only make anonymous functions. You can not make a named function using the arrow syntax.
       </p>
+      <p>Below is a video covering this post</p>
+      <video width="540" height="450" controls>
+        <source src={myVid} type="video/mp4"/>
+      </video>
       <p>
-      If you would like to learn more about arrow functions here are some resources<br/>
+      If you would like to learn more about arrow functions here are some resources.<br/>
       <Link href="https://www.youtube.com/watch?v=6sQDTgOqh-I">FunFunFunction - Arrow functions in JavaScript</Link><br/>
       <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">MDN Arrow functions</Link>
       </p>
