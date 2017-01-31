@@ -1,7 +1,7 @@
 import React from 'react';
 import Highlight from 'react-highlight';
 import { Link } from 'react-router';
-import myVid from '../static/videos/ES6-Arrow-Functions.mp4';
+
 const PostData = [
   {
     id: 1,
@@ -60,7 +60,7 @@ const PostData = [
       </p>
       <p>Below is a video covering this post</p>
       <video width="540" height="450" controls>
-        <source src={myVid} type="video/mp4"/>
+        <source src='/videos/ES6-Arrow-Functions.mp4' type="video/mp4"/>
       </video>
       <p>
       If you would like to learn more about arrow functions here are some resources.<br/>

@@ -11,7 +11,7 @@ module.exports = {
     loaders: [
       {
         test: __dirname,
-        exclude: /(node_modules)/,
+        exclude: /(node_modules|videos)/,
         loader: ['babel-loader'],
         query: {
           cacheDirectory: 'babel_cache',
@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.mp4$/,
-        loader: "file?name=../videos/[name].[ext]&mimetype=video/mp4"
+        loader: "file?name=../videos/[name].[ext]"
       }
     ]
   },

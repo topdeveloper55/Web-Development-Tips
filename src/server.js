@@ -11,6 +11,7 @@ const server = new Server(app);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + "/static"))
+app.use(express.static(__dirname + "videos/"))
 //app.use(express.static("images"))
 app.get('*', (req, res) => {
   match(
