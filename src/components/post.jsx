@@ -1,5 +1,5 @@
 import React from 'react';
-import PostData from '../data/postData.jsx';
+import PostData from '../data/postData.js';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 

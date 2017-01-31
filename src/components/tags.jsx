@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
-import PostData from '../data/postData.jsx';
+import PostData from '../data/postData.js';
 
 export class Tags extends React.Component {
   render() {
@@ -9,14 +9,15 @@ export class Tags extends React.Component {
     let allTags = postTags.split(',').reduce((obj, tag) => {
       obj[tag] = ++obj[tag] || 1;
       return obj;
-    },{})
+    },{});
     let tagsWithCount = [];
     for(var key in allTags){
       tagsWithCount.push(<Link className="tag indexTag" to={`/tags/${key.split(' ').join('-')}`}>{key} - <span>{allTags[key]}</span></Link>);
     }
     return (
+      //includes option to restrict how many tags are shown.
       <div className="tags">{tagsWithCount.slice(0,this.props.length || tagsWithCount.length)}</div>
-    )
+    );
   }
 }
 

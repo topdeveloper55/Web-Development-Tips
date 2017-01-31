@@ -3,6 +3,39 @@ import Highlight from 'react-highlight';
 import { Link } from 'react-router';
 
 const PostData = [
+  /*{
+    id: 2,
+    name: "snippet-tuesday-1",
+    title: "Snippet Tuesday #1",
+    time: "1/31/2017",
+    mainImage: "ArrowFunction.jpg",
+    keywords: "",
+    tags: "",
+    introduction: "",
+    content:
+    <div>
+      <p>
+      I had the idea to go over a snippets of code that I am using in this website and in other projects every tuesday. I will explain the use of the code and then walk through each part of it. I think this will be helpful for those seeking to understand and learn from real world examples of JavaScript code.
+      </p>
+      <Highlight className="javascript">
+{
+`let postTags = PostData.map(post => post.tags).join(',');
+let allTags = postTags.split(',').reduce((obj, tag) => {
+obj[tag] = ++obj[tag] || 1;
+return obj;
+},{});
+let tagsWithCount = [];
+for(var key in allTags){
+tagsWithCount.push(<Link className="tag indexTag" to={\`/tags/\${key.split(' ').join('-')}\`}>{key} - <span>{allTags[key]}</span></Link>);
+}
+return (
+//includes option to restrict how many tags are shown.
+<div className="tags">{tagsWithCount.slice(0,this.props.length || tagsWithCount.length)}</div>
+);`
+}
+      </Highlight>
+    </div>
+  },*/
   {
     id: 1,
     name: "es6-arrow-functions",
@@ -15,10 +48,10 @@ const PostData = [
     content:
     <div>
       <p>
-      ECMAScript 6 brings many new features to JavaScript that improve the overall quality of ones code as well as reducing the time it takes to write code. I would like to share one of my favorite additions to the language with you, the arrow function.
+       ECMAScript 6 brings many new features to JavaScript that increase productivity and improve readability. I would like to share one of my favorite additions to the language with you, the arrow function.
       </p>
       <p>
-      You probably understand what this anonymous function does. It is written in a standard pre ECMAScript 6 way.
+      You probably understand what this anonymous function does. It is written in ES5.
       </p>
       <Highlight className="javascript">
         {
@@ -28,7 +61,7 @@ const PostData = [
         }
       </Highlight>
       <p>
-      By using ES6 arrow function syntax, you can still convey the meaning of the code but also significantly reduce its size.
+      By using ES6 arrow function syntax, you can still convey the meaning of the function and significantly reduce the amount of JavaScript as well.
       </p>
       <Highlight className="javascript">
         {
@@ -38,7 +71,7 @@ const PostData = [
         }
       </Highlight>
       <p>
-      Another use for arrow functions is in functional programming. For example, you could map out an array of numbers like so..
+      Another use for arrow functions is in functional programming. For example, you could map out an array of numbers, adding two to each item in the array.
       </p>
       <Highlight className="javascript">
         {
@@ -48,7 +81,7 @@ const PostData = [
         }
       </Highlight>
       <p>
-      Or you could use the arrow function syntax to write the same code like below.
+      Or you could use the arrow function syntax to write the same code in a much shorter and cleaner fashion like below.
       </p>
       <Highlight className="javascript">
         {
@@ -56,12 +89,13 @@ const PostData = [
         }
       </Highlight>
       <p>
-      To be clear, arrow functions only make anonymous functions. You can not make a named function using the arrow syntax.
+      To be clear, arrow functions only make anonymous functions so you can not make a named function using the syntax. I've also made a short video covering this post below.
       </p>
-      <p>Below is a video covering this post</p>
-      <video width="540" height="450" controls>
-        <source src='/videos/ES6-Arrow-Functions.mp4' type="video/mp4"/>
-      </video>
+      <div className="video">
+        <video width="540" height="400" controls>
+          <source src='/videos/ES6-Arrow-Functions.mp4' type="video/mp4"/>
+        </video>
+      </div>
       <p>
       If you would like to learn more about arrow functions here are some resources.<br/>
       <Link href="https://www.youtube.com/watch?v=6sQDTgOqh-I">FunFunFunction - Arrow functions in JavaScript</Link><br/>

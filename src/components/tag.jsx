@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
-import PostData from '../data/postData.jsx';
+import PostData from '../data/postData.js';
 import Post from './indexPost.jsx';
 
 class TagPage extends React.Component {
@@ -18,12 +18,9 @@ class TagPage extends React.Component {
     },[])
     let keywords = matchingPosts.map(post => post.keywords).join(',');
     let description = matchingPosts.map(post => post.introduction).join(',');
-    let Posts = matchingPosts.reduce((arr,x,i) => {
-      if(i < 3) {
-        arr.push(<Post key={x.id} id={x.id} name={x.name} title={x.title} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>)
-      }
-      return arr;
-    },[])
+    let Posts = matchingPosts.map((arr,x) => {
+      return <Post key={x.id} id={x.id} name={x.name} title={x.title} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>
+    })
     return (
       <div>
       {Posts}
