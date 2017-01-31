@@ -1,7 +1,6 @@
 import path from 'path';
 import { Server } from 'http';
 import express from 'express';
-import sm from 'sitemap';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
@@ -38,27 +37,6 @@ app.get('*', (req, res) => {
     }
   );
 });
-
-/*var sitemap = sm.createSitemap({
-  hostname: 'http://websitedevtips.com',
-  cacheTime: 60000,
-  urls: [
-    {url: '/posts/', changefreq: 'daily', priority: 0.1},
-    {url: '/about/', changefreq: 'weekly', priority: 0.7},
-    {url: '/contact/', changefreq: 'weekly', priority: 0.7},
-    {ulr: '/tags/', changefreq: 'daily', priority: 0.2}
-  ]
-})
-
-app.get('*', (req, res) => {
-  sitemap.toXML((err, xml) => {
-    if(err) {
-      return res.status(500).end();
-    }
-    res.header('Content-Type', 'application/xml');
-    res.send(xml);
-  })
-})*/
 
 // start the server
 const port = process.env.PORT || 3000;
