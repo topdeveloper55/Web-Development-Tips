@@ -90,7 +90,8 @@ h2 {
 .home_container,
 .posts_container,
 .about_container,
-.tags_container {
+.tags_container,
+.tag_container{
 	align-items: center;
 	display: flex;
 	flex-flow: column wrap;

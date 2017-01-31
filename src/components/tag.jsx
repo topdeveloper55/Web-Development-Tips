@@ -10,19 +10,18 @@ class TagPage extends React.Component {
     function addDashed(x) {
       return x.map(m => m.split(' ').join('-'));
     }
-    let matchingPosts = PostData.reduce((arr, post) => {
+    let Data = PostData.reduce((arr, post) => {
       if(addDashed(post.tags.split(',')).indexOf(name) != -1) {
         arr.push(post);
       }
       return arr;
     },[])
-    let keywords = matchingPosts.map(post => post.keywords).join(',');
-    let description = matchingPosts.map(post => post.introduction).join(',');
-    let Posts = matchingPosts.map((arr,x) => {
-      return <Post key={x.id} id={x.id} name={x.name} title={x.title} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>
-    })
+    let Posts = Data.map(p => <Post key={p.id} id={p.id} name={p.name} title={p.title} tags={p.tags} time={p.time} mainImage={p.mainImage} intro={p.introduction} content={p.content}/>);
+    let keywords = Data.map(post => post.keywords).join(',');
+    let description = Data.map(post => post.introduction).join(',');
+    console.log(Posts);
     return (
-      <div>
+      <div className="tag_container">
       {Posts}
       <Helmet
         title={`${name} - WebsiteDevTips`}
