@@ -3,8 +3,9 @@ import Helmet from 'react-helmet';
 class NotFound extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container_404">
         <h2>Sorry, this page has not been found!</h2>
+        <p>Try using the navigation above to find the page you are looking for.</p>
         <Helmet
             title="404 - WebsiteDevTips"
             meta={[

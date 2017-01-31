@@ -1,6 +1,7 @@
 import path from 'path';
 import { Server } from 'http';
 import express from 'express';
+import sm from 'sitemap';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
@@ -18,33 +19,46 @@ app.get('*', (req, res) => {
     { routes, location: req.url },
     (err, redirectLocation, renderProps) => {
 
-      // in case of error display the error message
       if (err) {
         markup = renderToString(<NotFound/>);
         return res.status(500).send(err.message);
       }
-
-      // in case of redirect propagate the redirect to the browser
       if (redirectLocation) {
         return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
       }
 
-      // generate the React markup for the current route
       let markup;
       if (renderProps) {
-        // if the current route matched we have renderProps
         markup = renderToString(<RouterContext {...renderProps}/>);
       } else {
-        // otherwise we can render a 404 page
         markup = renderToString(<NotFound/>);
         res.status(404);
       }
-
-      // render the index template with the embedded React markup
       return res.render('index', { markup });
     }
   );
 });
+
+var sitemap = sm.createSitemap({
+  hostname: 'http://websitedevtips.com',
+  cacheTime: 60000,
+  urls: [
+    {url: '/posts/', changefreq: 'daily', priority: 0.1},
+    {url: '/about/', changefreq: 'weekly', priority: 0.7},
+    {url: '/contact/', changefreq: 'weekly', priority: 0.7},
+    {ulr: '/tags/', changefreq: 'daily', priority: 0.2}
+  ]
+})
+
+app.get('/sitemap.xml', (req, res) => {
+  sitemap.toXML((err, xml) => {
+    if(err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  })
+})
 
 // start the server
 const port = process.env.PORT || 3000;
