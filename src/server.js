@@ -39,7 +39,7 @@ app.get('*', (req, res) => {
   );
 });
 
-var sitemap = sm.createSitemap({
+/*var sitemap = sm.createSitemap({
   hostname: 'http://websitedevtips.com',
   cacheTime: 60000,
   urls: [
@@ -50,7 +50,7 @@ var sitemap = sm.createSitemap({
   ]
 })
 
-app.get('/sitemap.xml', (req, res) => {
+app.get('*', (req, res) => {
   sitemap.toXML((err, xml) => {
     if(err) {
       return res.status(500).end();
@@ -58,7 +58,7 @@ app.get('/sitemap.xml', (req, res) => {
     res.header('Content-Type', 'application/xml');
     res.send(xml);
   })
-})
+})*/
 
 // start the server
 const port = process.env.PORT || 3000;
