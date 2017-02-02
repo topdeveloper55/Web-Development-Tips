@@ -11,7 +11,7 @@ module.exports = {
     loaders: [
       {
         test: __dirname,
-        exclude: /(node_modules|videos)/,
+        exclude: /node_modules/,
         loader: ['babel-loader'],
         query: {
           cacheDirectory: 'babel_cache',
