@@ -19,7 +19,6 @@ class TagPage extends React.Component {
     let Posts = Data.map(p => <Post key={p.id} id={p.id} name={p.name} title={p.title} tags={p.tags} time={p.time} mainImage={p.mainImage} intro={p.introduction} content={p.content}/>);
     let keywords = Data.map(post => post.keywords).join(',');
     let description = Data.map(post => post.introduction).join(',');
-    console.log(Posts);
     return (
       <div className="tag_container">
       {Posts}

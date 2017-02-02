@@ -5,6 +5,7 @@ import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-68652696-2');
 function logPageView() {
+  window.scrollTo(0,0);
   ReactGA.set({ page: window.location.pathname });
   ReactGA.pageview(window.location.pathname);
 }

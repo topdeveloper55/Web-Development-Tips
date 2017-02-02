@@ -61,7 +61,7 @@ return (
         }
       </Highlight>
       <p>
-      By using ES6 arrow function syntax, you can still convey the meaning of the function and significantly reduce the amount of JavaScript as well.
+      By using ES6 arrow function syntax, you can still convey the meaning of the function and significantly reduce the amount of JavaScript.
       </p>
       <Highlight className="javascript">
         {
@@ -89,7 +89,7 @@ return (
         }
       </Highlight>
       <p>
-      To be clear, arrow functions only make anonymous functions so you can not make a named function using the syntax. I've also made a short video covering this post below.
+      To be clear, arrow functions only make anonymous functions, so you can not make a named function using the syntax. I've also made a short video covering this post below.
       </p>
       <div className="video">
         <video width="540" height="400" controls>
@@ -119,8 +119,13 @@ return (
     mainImage: "HelloWorld.jpg",
     keywords: "introduction,node.js",
     tags: "introduction",
-    introduction: "Welcome to my website! It has been quite an adventure getting everything setup! I was using FileZilla, but after some thinking I decided that to take advantage of being able to use a registered domain name. The backend of this site is built on Node.js and the frontend is built in React.js. Since bluehost doesn't have support for Node.js as far as I could tell, I pushed the website to Heroku and pointed my registered domain name to my Heroku app.",
-    content: <div><p>Welcome to my website! It has been quite an adventure getting everything setup! I was using FileZilla, but after some thinking I decided that to take advantage of being able to use a registered domain name. The backend of this site is built on Node.js and the frontend is built in React.js. Since bluehost doesn't have support for Node.js as far as I could tell, I pushed the website to Heroku and pointed my registered domain name to my Heroku app.</p></div>
+    introduction: "Welcome to websitedevtips.com! It has been quite an adventure getting everything setup. The backend of this site is built on Node.js and Express, while the frontend is built with React.js.",
+    content: 
+    <div><p>Welcome to websitedevtips.com! It has been quite an adventure getting everything setup. The backend of this site is built on Node.js and Express, while the frontend is built with React.js.</p>
+    <p>
+    The goal of this website is to provide small tips that developers can quickly start to implement in their own code. This site will cover many topics in the sphere of web development, so stay tuned :). 
+    </p>
+    </div>
   }
 ]
 

@@ -13,7 +13,7 @@ class About extends React.Component {
 							{name: "keywords", content: "websitedevtips.com,about,about page,about websitedevtips,websitedevtips about"}
 						]}
 				/>
-				<img style={{width: "200px"}} src="../img/my_image.jpg"/>
+				<img style={{width: "200px"}} src="../img/my_image.jpg" alt="An image of Devin Miller"/>
 
 				<p>My personal website (wip)</p>
 

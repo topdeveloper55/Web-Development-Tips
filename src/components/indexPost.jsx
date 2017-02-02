@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 class Post extends React.Component {
 	render() {
-		let mainImage = this.props.mainImage ? <img src={`/img/${this.props.mainImage}`}/> : "";
+		let mainImage = this.props.mainImage ? <img src={`/img/${this.props.mainImage}`} alt="Post header image"/> : "";
 		let tags = this.props.tags.split(',').map(tag => <Link className="tag" to={`/tags/${tag.split(' ').join('-')}`}>{tag}</Link>);
 		let daysAgo = Math.floor(( Date.parse(new Date()) - Date.parse(this.props.time)) / 86400000);
 		return (

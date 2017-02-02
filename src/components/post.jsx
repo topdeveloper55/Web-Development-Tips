@@ -18,7 +18,7 @@ class PostPage extends React.Component {
           ]}
         />
         <div className="postHeader">
-          <img src={`../img/${CurrentPost.mainImage}`}/>
+          <img src={`../img/${CurrentPost.mainImage}`} alt="Post header image"/>
           <h1>{CurrentPost.title}</h1>
 
           <time>{CurrentPost.time}</time>

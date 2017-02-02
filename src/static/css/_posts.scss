@@ -55,6 +55,10 @@
 }
 
 .baseBtn {
+  font-family: sans-serif, "Ariel";
+	text-decoration:none;
+	border-radius:2px;
+	box-shadow:inset 3px 3px rgba(255,255,255,.2),inset -3px -3px rgba(0,0,0,.2);
   background:lighten(#3B2C35,10%);
   position:absolute;
   bottom:20px;
