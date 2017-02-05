@@ -6,6 +6,7 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes';
 import NotFound from './components/404.jsx';
+
 const app = new express()
 const server = new Server(app);
 app.set('view engine', 'ejs');
@@ -13,6 +14,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + "/static"))
 app.use(express.static(__dirname + "videos/"))
 //app.use(express.static("images"))
+var post = require('./routes/post');
+app.use("/", post);
+
+
 app.get('*', (req, res) => {
   match(
     { routes, location: req.url },
@@ -38,6 +43,9 @@ app.get('*', (req, res) => {
   );
 });
 
+
+
+
 // start the server
 const port = process.env.PORT || 3000;
 const env = process.env.NODE_ENV || 'production';
@@ -47,3 +55,5 @@ server.listen(port, err => {
   }
   console.info(`Server running on http://localhost:${port} [${env}]`);
 });
+
+module.exports = app;

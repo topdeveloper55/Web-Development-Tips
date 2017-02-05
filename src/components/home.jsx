@@ -6,6 +6,8 @@ import Post from './indexPost.jsx';
 import {Tags} from './tags.jsx';
 
 class Home extends React.Component {
+  
+  
   render() {
     let Posts = PostData.reduce((arr,x,i) => {
       if(i < 3) {
@@ -31,6 +33,7 @@ class Home extends React.Component {
           <Tags length={4}/>
           <Link className="baseBtn" to="/tags">More Tags</Link>
         </div>
+        
       </div>
     )
   }

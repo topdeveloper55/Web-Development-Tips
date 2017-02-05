@@ -1,4 +1,4 @@
-.postPageContainer {
+.postPageContainer,.commentForm {
   margin: 10px auto;
   max-width: 1100px;
   @media(max-width:1400px){
@@ -7,7 +7,17 @@
     min-width:250px;
   }
 }
-
+.contactForm {
+  position:relative;
+  z-index:10;
+  background:red;
+}
+.comments {
+  position:relative;
+  z-index:12;
+  width:100%;
+  height:400px;
+}
 .postHeader {
   text-align:center;
   img {
