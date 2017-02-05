@@ -301,7 +301,7 @@ class PostComment extends React.Component {
       I'm happy to announce that you can now comment on websitedevtips.com. This is also a personal milestone for me, since this website is officially using the full MERN (MongoDB, Express, React, Node) stack to produce and display content! It feels like I finally have all of the colored pencils I need to draw the best picture I can.
       </p>
       <p>
-      I've also added search functionality and added a better mobile navigation system.
+      I've also added search functionality and added better mobile navigation.
       </p>
     </div>
   },
