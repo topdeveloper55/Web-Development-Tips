@@ -22,22 +22,24 @@ class PostPage extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
+    var date = new Date;
+    var fullDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
     var body = {
       name: this.state.name,
       comment: this.state.comment,
-      postName: this.props.params.name
+      postName: this.props.params.name,
+      date: fullDate
     }
     $.ajax({
       type: "POST",
       url: "/insert",
-      data: JSON.stringify(body),
-    }).done(function(data){
-      console.log('done');
-    }).fail(function(){
-      console.log("fail");
+      data: JSON.stringify(body)
     })
+    console.log("cool");
+    this.updateComments();
+    this.setState({name: "", comment: ""});
   }
-  componentDidMount(){
+  updateComments() {
     $.ajax({
       url: "/get-data",
       success: function(data) {
@@ -46,6 +48,7 @@ class PostPage extends React.Component {
             arr.push(
             <div className="comment">
               <div className="commentName">{comment.name}</div>
+              <date>{comment.date}</date>
               <p className="commentBody">{comment.comment}</p>
             </div>)
           }
@@ -54,6 +57,9 @@ class PostPage extends React.Component {
         this.setState({comments: tempComments})
       }.bind(this)
     })
+  }
+  componentDidMount(){
+    this.updateComments();
   }
   render() {
     const name = this.props.params.name;
@@ -79,15 +85,15 @@ class PostPage extends React.Component {
           <div className="postBody">{CurrentPost.content}</div>
           <Link className="baseBtn" to="/posts">Go Back to Posts</Link>
         </div>
-        <div className="post postPageContainer">
+        <div className="commentForm">
           <form onSubmit={this.handleSubmit.bind(this)}>
             <div className="input">
-                <label htmlFor="name">Name</label>
-                <input type="text" value={this.state.name} onChange={this.handleName.bind(this)}/>
+                <p>Name</p>
+                <input type="text" className="textInput" value={this.state.name} onChange={this.handleName.bind(this)}/>
             </div>
             <div className="input">
                 <p>Comment</p>
-                <textarea type="text" value={this.state.comment} onChange={this.handleComment.bind(this)}/>
+                <textarea type="text" className="textArea" value={this.state.comment} onChange={this.handleComment.bind(this)}/>
             </div>
             <button className="baseBtn" type="submit">Comment</button>
           </form>

@@ -32,7 +32,8 @@ router.post('/insert', function(req, res, next) {
     var comment = {
       name: data.name,
       comment: data.comment,
-      postName: data.postName
+      postName: data.postName,
+      date: data.date
     }
     
     mongo.connect(url, function(err, db){
