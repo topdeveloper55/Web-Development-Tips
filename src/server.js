@@ -17,7 +17,6 @@ app.use(express.static(__dirname + "videos/"))
 var post = require('./routes/post');
 app.use("/", post);
 
-
 app.get('*', (req, res) => {
   match(
     { routes, location: req.url },

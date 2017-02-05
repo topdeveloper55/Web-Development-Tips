@@ -2,17 +2,22 @@ import express from 'express';
 var mongo = require('mongodb').MongoClient;
 var router = express.Router();
 var url = process.env.MONGODB_URI;
-router.get('/', function(req, res, next) {
+
+router.get('/', function(req, res) {
   res.render('index');
 });
-router.get('/get-data', function(req,res, next){
+
+router.get('/get-data', function(req,res){
   var resultArray = [];
+  
   mongo.connect(url, function(err, db) {
     if(err) throw err;
-    var cursor = db.collection('comments').find();
-    cursor.forEach(function(doc, err) {
+    
+    var data = db.collection('comments').find();
+    
+    data.forEach(function(item, err) {
       if(err) throw err;
-      resultArray.push(doc);
+      resultArray.push(item);
     }, function() {
       db.close();
       res.send(resultArray);
@@ -20,7 +25,7 @@ router.get('/get-data', function(req,res, next){
   });
 })
 
-router.post('/insert', function(req, res, next) {
+router.post('/insert', function(req, res) {
   var jsonString = '';
 
   req.on('data', function (data) {
@@ -45,8 +50,6 @@ router.post('/insert', function(req, res, next) {
       })
     })
   });
-  
-  
 })
 
 module.exports = router;

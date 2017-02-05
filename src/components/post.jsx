@@ -35,7 +35,7 @@ class PostPage extends React.Component {
       url: "/insert",
       data: JSON.stringify(body)
     })
-    console.log("cool");
+    
     this.updateComments();
     this.setState({name: "", comment: ""});
   }
