@@ -14,8 +14,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + "/static"))
 app.use(express.static(__dirname + "videos/"))
 //app.use(express.static("images"))
-var post = require('./routes/post');
-app.use("/", post);
+var mongoRoutes = require('./routes/mongodb-routes');
+app.use("/", mongoRoutes);
 
 app.get('*', (req, res) => {
   match(

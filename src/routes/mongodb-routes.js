@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
   res.render('index');
 });
 
-router.get('/get-data', function(req,res){
+router.get('/get-comments', function(req,res){
   var resultArray = [];
   
   mongo.connect(url, function(err, db) {
@@ -25,7 +25,7 @@ router.get('/get-data', function(req,res){
   });
 })
 
-router.post('/insert', function(req, res) {
+router.post('/post-comments', function(req, res) {
   var jsonString = '';
 
   req.on('data', function (data) {
@@ -50,6 +50,34 @@ router.post('/insert', function(req, res) {
       })
     })
   });
+})
+
+router.post('/post-contact', function(req, res) {
+  var jsonString = '';
+  
+  req.on('data', function(data) {
+    jsonString += data;
+  });
+  
+  req.on('end', function() {
+    var data = JSON.parse(jsonString);
+    var message = {
+      name: data.name,
+      email: data.email,
+      title: data.title,
+      message: data.message,
+      date: data.date
+    }
+    
+    mongo.connect(url, function(err, db) {
+      if(err) throw err;
+      db.collection('messages').insertOne(message, function(err, result) {
+        if(err) throw err;
+        console.log("message inserted");
+        db.close();
+      })
+    })
+  })
 })
 
 module.exports = router;

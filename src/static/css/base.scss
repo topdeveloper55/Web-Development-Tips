@@ -1,4 +1,5 @@
 @import "_posts.scss";
+@import "_contact.scss";
 @import "_post.scss";
 @import "_prism.scss";
 @import "_tags.scss";
@@ -242,7 +243,7 @@ h2 {
 	}
 }
 .posts_container,
-.home_container {
+.home_container{
 	align-items: flex-start;
 	flex-flow: row wrap;
 }

@@ -32,7 +32,7 @@ class PostPage extends React.Component {
     }
     $.ajax({
       type: "POST",
-      url: "/insert",
+      url: "/post-comments",
       data: JSON.stringify(body)
     })
     
@@ -41,7 +41,7 @@ class PostPage extends React.Component {
   }
   updateComments() {
     $.ajax({
-      url: "/get-data",
+      url: "/get-comments",
       success: function(data) {
         var tempComments = data.reduce((arr,comment) => {
           if(comment.postName == this.props.params.name) {
