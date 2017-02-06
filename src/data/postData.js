@@ -87,8 +87,7 @@ router.post('/post-endpoint', function(req, res) {
       </p>
       <Highlight className="javascrip">
       {
-`
-import React from 'react';
+`import React from 'react';
 import $ from 'jquery';
 
 class PostComment extends React.Component{
@@ -185,8 +184,7 @@ class PostComment extends React.Component{
       </p>
       <Highlight className="javascript">
 {
-`
-class PostComment extends React.Component {
+`class PostComment extends React.Component {
   constructor(props) {
     super(props);
     

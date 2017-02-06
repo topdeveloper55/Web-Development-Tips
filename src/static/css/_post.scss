@@ -7,29 +7,87 @@
     min-width:250px;
   }
 }
+.input {
+  position:relative;
+}
+.input label {
+  position:absolute;
+  
+  transition:.3s all;
+  font-size:16px;
+  color:#666;
+}
+
+.textInput + label {
+  top:0;
+  bottom:0;
+  left:0;
+  display:flex;
+  align-items:center;
+  border-radius:5px 0px 0px 5px;
+  padding:0px 5px;
+}
+
+.textArea + label {
+  top:20px;
+  left:0;
+  height:30px;
+  display:flex;
+  align-items:center;
+  border-radius:5px 0px 0px 0px;
+  padding:0px 5px;
+}
+
 .commentForm {
   position:relative;
   z-index:12;
   background:white;
-  padding:5px;
+  padding:20px;
   box-sizing:border-box;
   height:400px;
   font-size:15px;
+  overflow:hidden;
+  font-family: sans-serif;
+  box-shadow:4px 4px 4px rgba(0,0,0,.2);
   .textArea {
+    margin-top:20px;
+    text-indent:90px;
+    line-height:25px;
     width:100%;
-    height:150px;
+    height:265px;
+    font-size:15px;
     border-radius:5px;
-    
+    box-shadow:inset 1px 1px 1px rgba(0,0,0,.5);
     padding:5px;
-    margin:5px;
+    background:rgb(250,250,250);
     box-sizing:border-box;
+    border:1px solid #bbb;
+    resize:none;
+    font-family: sans-serif;
+    
   }
   .textInput {
+    text-indent:60px;
     width:100%;
-    height:40px;
+    line-height:30px;
     border-radius:5px;
+    border:none;
+    font-size:18px;
+    border:1px solid #bbb;
+    background:rgb(250,250,250);
+    box-shadow:inset 1px 1px 1px rgba(0,0,0,.5);
   }
 }
+.textInput:focus, .textArea:focus {
+  outline:none;
+  & + label {
+    background:#5F4755;
+    color:white;
+    transition:.3s all;
+    box-shadow:2px 2px 4px rgba(0,0,0,.2);
+  }
+}
+
 .comment {
   width:100%;
   background:white;
@@ -64,4 +122,5 @@
 
 code {
   font-size:15px;
+  font-family:"UbuntuMono",serif;
 }

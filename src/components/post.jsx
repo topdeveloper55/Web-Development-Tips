@@ -88,12 +88,12 @@ class PostPage extends React.Component {
         <div className="commentForm">
           <form onSubmit={this.handleSubmit.bind(this)}>
             <div className="input">
-                <p>Name</p>
-                <input type="text" className="textInput" value={this.state.name} onChange={this.handleName.bind(this)}/>
+                <input type="text" id="name" className="textInput" value={this.state.name} onChange={this.handleName.bind(this)}/>
+                <label htmlFor="name">Name</label>
             </div>
             <div className="input">
-                <p>Comment</p>
-                <textarea type="text" className="textArea" value={this.state.comment} onChange={this.handleComment.bind(this)}/>
+                <textarea type="text" id="comment" className="textArea" value={this.state.comment} onChange={this.handleComment.bind(this)}/>
+                <label htmlFor="comment">Comment</label>
             </div>
             <button className="baseBtn" type="submit">Comment</button>
           </form>

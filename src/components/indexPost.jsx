@@ -18,7 +18,7 @@ class Post extends React.Component {
 					<p>{this.props.intro.slice(0, 200) + "..."}</p>
 				</div>
 				<div className="days_ago">
-			    <h2>{daysAgo} days ago</h2>
+			    <div className="daysAgo">{daysAgo} days ago</div>
 			  </div>
 			  <div className="tagsAbsolute">
 			    {tags}

@@ -3,14 +3,12 @@
 @import "_dark.scss";
 @import "_tags.scss";
 @font-face{font-family: "Igra"; src: url('../fonts/IgraSans.woff') format('woff')};
-@font-face{font-family: "ButlerBold";
-	src: url('../fonts/Butler.ttf') format('truetype'),
-	url('../fonts/Butler.woff') format('woff');
-};
+@font-face{font-family: "UbuntuMono"; src: url('../fonts/UbuntuMono-R.ttf') format('truetype')}
 html, body {
 	margin: 0;
 	overflow-x: hidden;
 	padding: 0;
+	
 }
 html {
 	background: rgba(255,255,255,.7) url('../img/background.png') repeat;
@@ -195,8 +193,9 @@ h1 {
 	text-shadow: 2px 2px white;
 }
 h2 {
-	font-family: "ButlerBold";
+	font-family: "Igra";
 	text-shadow: 2px 2px white;
+	font-size:20px;
 }
 .navLink {
 	color: white;

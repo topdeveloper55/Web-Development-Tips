@@ -25,11 +25,11 @@ class Home extends React.Component {
 					]}
 				/>
         <div className="latestPosts">
-          <h2 className="header">Latest Posts</h2>
+          <h1 className="header">Latest Posts</h1>
           {Posts}
         </div>
         <div className="popularTags">
-          <h2 className="header">Popular Tags</h2>
+          <h1 className="header">Popular Tags</h1>
           <Tags length={4}/>
           <Link className="baseBtn" to="/tags">More Tags</Link>
         </div>
