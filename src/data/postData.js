@@ -11,11 +11,11 @@ const PostData = [
     mainImage: "mongodb-logo.png",
     keywords: "mongodb,database,MERN,mern,react,node,express,jquery,ajax",
     tags: "mongodb,react,jquery,ajax",
-    introduction: "I would like to go over how I integrated MongoDB with my existing application and used it to add a commenting database (and soon a contact database as well). I will also share some resources that I found invaluable for this adventure at the end. I'm doing this because I would like to share the experience of setting up a database, but also because I would like to have some personalized documentation on this subject when I need to setup MongoDB in the future.",
+    introduction: "I would like to go over how I integrated MongoDB with my existing application and used it to add a database. I will also share some resources that I found invaluable for this adventure at the end. I'm doing this because I would like to share the experience of setting up a database, but also because I would like to have some personalized documentation on this subject when I need to setup MongoDB in the future.",
     content:
     <div>
       <p>
-      I would like to go over how I integrated MongoDB with my existing application and used it to add a commenting database (and soon a contact database as well). I will also share some resources that I found invaluable for this adventure at the end. I'm doing this because I would like to share the experience of setting up a database, but also because I would like to have some personalized documentation on this subject when I need to setup MongoDB in the future. 
+      I would like to go over how I integrated MongoDB with my existing application and used it to add a database. I will also share some resources that I found invaluable for this adventure at the end. I'm doing this because I would like to share the experience of setting up a database, but also because I would like to have some personalized documentation on this subject when I need to setup MongoDB in the future. 
       </p>
       <p>
       First, I downloaded the MongoDB npm (node package manager) package and saved it to my package.json for later production use.
