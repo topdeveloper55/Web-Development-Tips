@@ -1,7 +1,6 @@
 import React from 'react';
-import Highlight from 'react-highlight';
 import { Link } from 'react-router';
-
+import {PrismCode} from 'react-prism';
 const PostData = [
   {
     id: 3,
@@ -20,30 +19,30 @@ const PostData = [
       <p>
       First, I downloaded the MongoDB npm (node package manager) package and saved it to my package.json for later production use.
       </p>
-      <Highlight className="bash">
+      <pre><PrismCode className="language-bash">
 {
 `npm install --save mongodb`
 }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       I am using Cloud 9 so I just followed to recommended directions offered by Cloud 9 for setting up a MongoDB development server. If you are doing this on your local machine you will need to download MongoDB from <a href="https://www.mongodb.com/">MongoDB's main website</a>. Since I havn't done this locally, I would recommend doing a little research on how to set things up if you plan on doing so. 
       </p>
       <p>
         After starting the development server I decided to make a seperate file for making my db's endpoints. In my server.js file, I added these lines of code before all of my other routing.
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
 {
 `var post = require('./routes/post');
 app.use("/", post);`
 }
-      </Highlight>
+      </PrismCode></pre>
       <p>
         So, I required my post.js file (found in the routes folder at the current directory) and then instructed express to try matching the routes in post.js before trying to match any of the routes in server.js.
       </p>
       <p>
         In the post.js (I named it post.js because it deals exclusively with post comments at the moment) file I imported the needed packages and made an endpoint for posting to the database. This is the final post endpoint that I came up with. 
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
 {
 `import express from 'express';
 var mongo = require('mongodb').MongoClient;
@@ -78,14 +77,14 @@ router.post('/post-endpoint', function(req, res) {
 }
 `
 }
-      </Highlight>
+      </PrismCode></pre>
       <p>
         Since this is dealing with asyncronous code, it is best to use callbacks or promises to run code once an event has occured (such as data being captured).Nothing will work properly if you don't use something like a callback. JSON.parse is used because the react code being used is converting the data in a submitted form into json before shipping it off to the server.
       </p>
       <p>
         Let's look at the React code for posting. 
       </p>
-      <Highlight className="javascrip">
+      <pre><PrismCode className="language-javascript">
       {
 `import React from 'react';
 import $ from 'jquery';
@@ -147,14 +146,14 @@ class PostComment extends React.Component{
 }
 `
       }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       If you are familiar with React then everything here should look fairly familar except maybe the JQuery and AJAX portion. The form is using two way binding to update the components state which updates the forms values as well. When the user decides to submit the form, the default refresh of the page is prevented and I get the current date in a readable format. I then made a body object with the current name, comment, date, and the name of the post which is passed in through react-router (I may go over this is a future post if anyone is interested). An AJAX POST request is then made to the post-endpoint, passing in json formatted data. Finally, I set the name and comment state to empty strings. This will clear the fields out after the user has submitted to form as an indication that something happened.
       </p>
       <p>
       Ok, so now one can submit data to the database and it will be saved. Let's go over how to retrieve that data. Back in the post.js I made an endpoint for retrieving data from the database.
       </p>
-      <Highlight>
+      <pre><PrismCode className="language-javascript">
 {
 `router.get('/get-data', function(req,res){
   var resultArray = [];
@@ -175,14 +174,14 @@ class PostComment extends React.Component{
 })
 `
 }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       .find() on a MongoDB collection will retrieve all of its contents. The data is then looped through and for each item in the collection I pushed it to an array. After all the data is stored in the array, there is a callback function that closes the database (very important!) and sends the array of data off to the source that requested it.
       </p>
       <p>
       Using the same page to get the comments as I used to send them, I then set up an AJAX GET request for getting all comments for a particular post.
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
 {
 `class PostComment extends React.Component {
   constructor(props) {
@@ -246,7 +245,7 @@ class PostComment extends React.Component{
 }
 `
 }
-      </Highlight>
+      </PrismCode></pre>
       <p>
         I added updateComments to run on submit so that a user can see his/her comment appear right after they submit it (without needing to refresh). The AJAX request captures the data that is returned from the server and reduces it to only the comments which are linked to the current post and for each comment that belongs to the post it adds some HTML around the data to make it look better. Finally, the components comments state is set to all the data (now in an array). It is then rendered to the page with this.state.comments :).
       </p>
@@ -259,11 +258,11 @@ class PostComment extends React.Component{
       <p>
         Once all of the setup is done. I used Heroku's <a href="https://devcenter.heroku.com/articles/mongolab#connecting-to-existing-mlab-deployments-from-heroku">Connecting to existing mLab deployments from Heroku</a> documentation to setup my application's database configurations in command line. After I was done setting things up, all I had to do was change a line of code in my post.js file.
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
 {
 `var url = process.env.MONGODB_URI;`
 }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       process.env.MONGODB_URI is an environmental variable setup through the command line with Heroku. This is so you do not have to put sensative information directly in your source code.
       </p>
@@ -320,41 +319,41 @@ class PostComment extends React.Component{
       <p>
       You probably understand what this anonymous function does. It is written in ES5.
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
         {
 `var hi = function(){
   console.log('hello');
 };`
         }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       By using ES6 arrow function syntax, you can still convey the meaning of the function and significantly reduce the amount of JavaScript.
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
         {
 `var hi = () => {
   console.log('hello');
 };`
         }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       Another use for arrow functions is in functional programming. For example, you could map out an array of numbers, adding two to each item in the array.
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
         {
 `myArray.map(function(item){
   return item + 2;
 })`
         }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       Or you could use the arrow function syntax to write the same code in a much shorter and cleaner fashion like below.
       </p>
-      <Highlight className="javascript">
+      <pre><PrismCode className="language-javascript">
         {
 `myArray.map(item => item + 2);`
         }
-      </Highlight>
+      </PrismCode></pre>
       <p>
       To be clear, arrow functions only make anonymous functions, so you can not make a named function using the syntax. I've also made a short video covering this post below.
       </p>

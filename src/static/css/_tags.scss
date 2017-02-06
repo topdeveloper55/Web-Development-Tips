@@ -3,12 +3,14 @@
 	margin:2px;
 	padding:5px;
 	font-size:10px;
+	text-shadow:1px 1px black;
 	color:white;
 	font-family:sans-serif;
-	opacity:.7;
   text-decoration: none;
+  transition:.3s background;
 	&:hover {
-		opacity:1;
+		transition:.3s background;
+		background:darken(red,10%);
 		cursor:pointer;
 	}
 }
@@ -16,7 +18,6 @@
 .tags {
 	display:flex;
 	flex-flow:row wrap;
-	//justify-content:space-between;
 	margin-bottom:10px;
 }
 
