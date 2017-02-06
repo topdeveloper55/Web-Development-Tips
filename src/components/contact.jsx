@@ -29,6 +29,8 @@ class Contact extends React.Component {
     	url: "/post-contact",
     	data: JSON.stringify(message)
     })
+    
+    this.setState({name: "", email: "", title: "", message: ""});
 	}
 	handleName(e){
 		this.setState({name: e.target.value})
