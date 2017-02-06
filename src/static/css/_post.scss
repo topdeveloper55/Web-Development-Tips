@@ -40,7 +40,7 @@
 
 .commentForm {
   position:relative;
-  z-index:12;
+  z-index:10;
   background:white;
   padding:20px;
   box-sizing:border-box;
@@ -97,13 +97,22 @@
   .commentName {
     font-size:18px;
     font-weight:bold;
+    font-family:sans-serif;
+  }
+  date {
+    font-style:italic;
+    font-size:14px;
   }
 }
+
 .comments {
   position:relative;
-  z-index:12;
+  z-index:10;
   padding:20px;
   box-sizing:border-box;
+  display:flex;
+  flex-flow:column wrap;
+  align-items:center;
 }
 .postHeader {
   text-align:center;

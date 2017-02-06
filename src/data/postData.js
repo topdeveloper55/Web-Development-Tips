@@ -261,7 +261,7 @@ class PostComment extends React.Component{
       </p>
       <Highlight className="javascript">
 {
-`var url = process.env.MONGODB_URI`
+`var url = process.env.MONGODB_URI;`
 }
       </Highlight>
       <p>
