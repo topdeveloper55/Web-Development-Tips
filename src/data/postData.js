@@ -3,6 +3,45 @@ import { Link } from 'react-router';
 import {PrismCode} from 'react-prism';
 const PostData = [
   {
+    id: 4,
+    name: "making-smooth-animations",
+    title: "Making Smooth Animations With CSS and HTML5 Canvas",
+    time: "2/6/2017",
+    mainImage: "animations.jpg",
+    keywords: "animation,css,styling, translate3d,transform,user experience,ux",
+    tags: "css,animation,ux",
+    introduction: "Roughly a month ago I was working my portfolio website and noticed that the animations on my website were really choppy and inconsistent. While researching a solution to the problem, I found out that the browser's are often redrawing (painting) the page after each frame an object is in animation. Luckily there are solutions to solve poor performance issues that this can cause!",
+    content:
+      <div>
+        <p>
+        Roughly a month ago I was working my portfolio website and noticed that the animations on my website were really choppy and inconsistent. While researching a solution to the problem, I found out that browsers are often redrawing (painting) the page after each frame an object is in animation. Luckily there are solutions to solve poor performance issues that this can cause!
+        </p>
+        <p>
+        The solution to my particular problem was to use a transform value called translate3d which is hardware accelerated and does not require the browser to repaint the page. Opacity and all other transform values (I believe) have this special characteristic. Transform and opacity are limited, though, so you may need to look a little further for something that can create very specific animations.
+        </p>
+        <p>
+        Since CSS can be a little limiting at times, another option to reduce choppy animations would be to use HTML5 canvas (also using the GPU)! This would probably be the trickiest option to perfect due to canvas being a somewhat advanced topic.
+        </p>
+        <p>
+        There is a wonderful article on flipboard.com about their pursuit to make a mobile website with consistent, 60fps animations. It's called <a href="http://engineering.flipboard.com/2015/02/mobile-web/">60fps on the mobile web</a> and I would recommend giving it a read if you are interested in making animations with canvas (and react.js) or just like an inspiring read.
+        </p>
+        <p>
+        Another cool website demonstrating the power of the HTML5 canvas is <a href="http://www.effectgames.com/demos/canvascycle/">http://www.effectgames.com/demos/canvascycle/</a> which has lots of cool scenes all powered by canvas (an example of one below).<br/>
+        <img style={{float: "center"}} src="../img/canvas-demo.png" alt="canvas demo image"/>
+        </p>
+        <p>
+        If you are interested in seeing translate3d in action then you can look at the mobile version of this website - the navigation menu uses translate3d transitions to achieve the animations. Below are some links for further exploration, enjoy :).
+        </p>
+        <ul>
+          <li><a href="http://engineering.flipboard.com/2015/02/mobile-web/">60fps on the mobile web</a></li>
+          <li><a href="http://codepen.io/tag/canvas/">Codepen.io canvas projects</a></li>
+          <li><a href="http://www.effectgames.com/demos/canvascycle/">http://www.effectgames.com/demos/canvascycle/</a></li>
+          <li><a href="http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css">increase-your-sites-performance-with-hardware-accelerated-css - Treehouse</a></li>
+          <li><a href="http://blog.teamtreehouse.com/create-smoother-animations-transitions-browser">http://blog.teamtreehouse.com/create-smoother-animations-transitions-browser</a></li>
+          </ul>
+      </div>
+  },
+  {
     id: 3,
     name: "adding-mongodb",
     title: "Adding MongoDB",
