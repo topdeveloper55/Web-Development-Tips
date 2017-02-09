@@ -55,7 +55,7 @@ class Contact extends React.Component {
 						{name: "keywords", content: "websitedevtips.com,website dev tips,developer tips,contact,contact me,question"}
 					]}
 				/>
-				<div className="contactForm">
+				<div className="contactForm" data-aos="fade-down-back" data-aos-once="true" data-aos-duration="1000">
 					<form onSubmit={this.handleSubmit.bind(this)}>
             <div className="input">
                 <input type="text" id="name" className="textInput" value={this.state.name} onChange={this.handleName.bind(this)}/>

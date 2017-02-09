@@ -10,7 +10,7 @@ class Post extends React.Component {
 		let daysAgo = Math.floor(( Date.parse(new Date()) - Date.parse(this.props.time)) / 86400000);
 		const randomEffect = Math.floor(Math.random() * (2 - 0) + 0) ? "fade-left" : "fade-right";
 		return (
-			<div className="post" data-aos-once="true" data-aos-easing="ease-in-out-cubic" data-aos={randomEffect} data-aos-duration="500" data-aos-anchor-placement="top-bottom">
+			<div className="post" data-aos-once="true" data-aos-easing="ease-in-out-back" data-aos={randomEffect} data-aos-duration="700" data-aos-anchor-placement="top-bottom">
 				<div className="postHeader">
 					<div className="mainImage">{mainImage}</div>
 					<h2 className="header">{this.props.title}</h2>

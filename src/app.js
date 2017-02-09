@@ -6,6 +6,8 @@ require('./static/js/prism.js');
 require('../node_modules/aos/dist/aos.css')
 import AOS from 'aos';
 window.onload = () => {
-  AOS.init();
+  AOS.init({
+    disable: 'mobile'
+  });
   ReactDOM.render(<AppRoutes/>,document.getElementById('container'));
 }
