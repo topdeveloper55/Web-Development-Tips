@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
 class Post extends React.Component {
 	render() {
+		
 		let mainImage = this.props.mainImage ? <img src={`/img/${this.props.mainImage}`} alt="Post header image"/> : "";
 		let tags = this.props.tags.split(',').map(tag => <Link className="tag" to={`/tags/${tag.split(' ').join('-')}`}>{tag}</Link>);
 		let daysAgo = Math.floor(( Date.parse(new Date()) - Date.parse(this.props.time)) / 86400000);
 		return (
-			<div className="post">
+			<div className="post" data-aos-easing="ease-in-out-cubic" data-aos="fade" data-aos-duration="500" data-aos-anchor-placement="top-bottom">
 				<div className="postHeader">
 					<div className="mainImage">{mainImage}</div>
 					<h2 className="header">{this.props.title}</h2>

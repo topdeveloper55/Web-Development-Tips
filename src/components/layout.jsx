@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
+
 class Header extends React.Component{
-  constructor(props){
-    super(props)
+  constructor(props, context){
+    super(props, context)
     this.state = {
       search: "",
       menuClass: "",
       scrollMenu: false
     }
+    
   }
-  
   handleChange(e) {
     this.setState({search: e.target.value});
   }

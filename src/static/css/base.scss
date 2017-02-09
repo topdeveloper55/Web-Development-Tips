@@ -71,6 +71,7 @@ html {
 	@media(min-width: 750px) {
 		display: none;
 	}
+	
 }
 .bars {
 	height: 100%;
@@ -82,7 +83,7 @@ html {
 		left: 2px;
 		position: absolute;
 		top: 12px;
-		transition: .5s all;
+		transition: .5s top,.5s transform;
 		width: calc(100% - 4px);
 	}
 	&:before {
@@ -91,21 +92,20 @@ html {
 		content: "";
 		left: 2px;
 		position: absolute;
-		transition: .5s all;
+		transition: .5s bottom.5s transform;
 		width: calc(100% - 4px);
 	}
-	
 }
 .closeBars {
 	&:after {
 		top: 15px;
 		transform: rotate(45deg);
-		transition: .5s all;
+		transition: .5s top,.5s transform;
 	}
 	&:before {
 		bottom: 20px;
 		transform: rotate(-45deg);
-		transition: .5s all;
+		transition: .5s bottom,.5s transform;
 	}
 }
 .mobileNavbar {

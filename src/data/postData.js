@@ -2,13 +2,30 @@ import React from 'react';
 import { Link } from 'react-router';
 import {PrismCode} from 'react-prism';
 const PostData = [
+  /*{
+    id: 5,
+    name: "finding-inspiration",
+    title: "Finding Inspiration",
+    introduction: "Design has never been my forte; however, by rever"
+  },
+  /*{
+    id: NaN,
+    name: "font-family",
+    title: "CSS @font-face",
+    time: "2/7/2017",
+    mainImage: "font-face.jpg",
+    keywords: "css,font,font-face,type,lettering",
+    tags: "css,font",
+    introduction: "Until recently I was using strictly google fonts and was a little bit intimidated by using downloaded fonts. They can be hard to adopt, but since using downloaded fonts I've noticed that page loading is slightly faster and I've also had much more options for what sorts of fonts I want to use (Such as Igra, the font I am using for this website). I hope to convince you to give them a try.",
+    content: ""
+  },*/
   {
     id: 4,
     name: "making-smooth-animations",
     title: "Making Smooth Animations With CSS and HTML5 Canvas",
     time: "2/6/2017",
     mainImage: "animations.jpg",
-    keywords: "animation,css,styling, translate3d,transform,user experience,ux",
+    keywords: "animation,css,styling,translate3d,transform,user experience,ux",
     tags: "css,animation,ux",
     introduction: "Roughly a month ago I was working my portfolio website and noticed that the animations on my website were really choppy and inconsistent. While researching a solution to the problem, I found out that the browser's are often redrawing (painting) the page after each frame an object is in animation. Luckily there are solutions to solve poor performance issues that this can cause!",
     content:

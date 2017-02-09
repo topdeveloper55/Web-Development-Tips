@@ -67,7 +67,7 @@ class PostPage extends React.Component {
 
     return (
       <div>
-        <div className="post postPageContainer">
+        <div className="post postPageContainer"  data-aos-easing="ease-in-out-cubic" data-aos="fade" data-aos-duration="500" data-aos-anchor-placement="top-bottom">
           <Helmet
             title={CurrentPost.title + " - WebsiteDevTips"}
             meta={[
