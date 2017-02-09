@@ -8,8 +8,9 @@ class Post extends React.Component {
 		let mainImage = this.props.mainImage ? <img src={`/img/${this.props.mainImage}`} alt="Post header image"/> : "";
 		let tags = this.props.tags.split(',').map(tag => <Link className="tag" to={`/tags/${tag.split(' ').join('-')}`}>{tag}</Link>);
 		let daysAgo = Math.floor(( Date.parse(new Date()) - Date.parse(this.props.time)) / 86400000);
+		const randomEffect = Math.floor(Math.random() * (2 - 0) + 0) ? "fade-left" : "fade-right";
 		return (
-			<div className="post" data-aos-easing="ease-in-out-cubic" data-aos="fade" data-aos-duration="500" data-aos-anchor-placement="top-bottom">
+			<div className="post" data-aos-once="true" data-aos-easing="ease-in-out-cubic" data-aos={randomEffect} data-aos-duration="500" data-aos-anchor-placement="top-bottom">
 				<div className="postHeader">
 					<div className="mainImage">{mainImage}</div>
 					<h2 className="header">{this.props.title}</h2>

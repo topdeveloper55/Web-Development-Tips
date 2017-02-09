@@ -50,8 +50,10 @@ html {
 	letter-spacing: 2px;
 	line-height: 40px;
 	padding: 0px;
-	position: relative;
-	z-index: 2;
+	position: fixed;
+	width:100%;
+	
+	z-index: 13;
 	@media(max-width: 750px) {
 		display: none;
 	}
@@ -143,11 +145,13 @@ html {
 	display: flex;
 	height: 40px;
 	justify-content: space-between;
-	padding: 0;
+	
+	margin-top:45px;
 	position: relative;
 	z-index: 12;
 	@media(max-width: 750px) {
 		flex-flow: column wrap;
+		margin: 0;
 		height: 100px;
 		justify-content: center;
 		position: fixed;

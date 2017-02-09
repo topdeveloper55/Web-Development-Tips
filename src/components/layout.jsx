@@ -78,6 +78,21 @@ class Header extends React.Component{
   }
 }
 
+/*class Footer extends React.Component {
+  render() {
+    return (
+      <footer>
+      <nav>
+  			<Link className="navLink" to="/">Home</Link>
+        <Link className="navLink" to="/posts">Posts</Link>
+        <Link className="navLink" to="/about">About</Link>
+        <Link className="navLink" to="/contact">Contact</Link>
+  		</nav>
+      </footer>
+    )
+  }
+}*/
+
 
 
 class Layout extends React.Component {
@@ -89,6 +104,7 @@ class Layout extends React.Component {
         <div className="main">
           {this.props.children}
         </div>
+        
       </div>
     )
   }
