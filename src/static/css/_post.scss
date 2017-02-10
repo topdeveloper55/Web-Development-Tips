@@ -4,9 +4,9 @@
 .comments {
   margin: 10px auto;
   max-width: 1100px;
+  width:100%;
   @media(max-width:1400px){
     max-width:1100px;
-    width:100%;
     min-width:250px;
   }
 }

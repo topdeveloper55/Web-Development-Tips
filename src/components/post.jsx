@@ -67,7 +67,7 @@ class PostPage extends React.Component {
     const randomEffect = Math.floor(Math.random() * (2 - 0) + 0) ? "fade-left" : "fade-right";
     return (
       <div>
-        <div className="post postPageContainer"  data-aos-easing="ease-in-out-cubic" data-aos={randomEffect}  data-aos-duration="500" data-aos-anchor-placement="top-bottom">
+        <div className="post postPageContainer">
           <Helmet
             title={CurrentPost.title + " - WebsiteDevTips"}
             meta={[

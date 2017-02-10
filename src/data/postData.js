@@ -1,9 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {PrismCode} from 'react-prism';
-const PostData = [
+import Youtube from 'react-youtube';
+import Codepen from 'react-codepen';
+let PostData = [
   /*{
-    id: 5,
+    name: "asda",
+    title: "Elixir",
+    image: "inspiration.png",
+    
+    intoduction: "I made this mistake early on because I figured "
+  },
+  /*{
+    id: NaN,
     name: "finding-inspiration",
     title: "Finding Inspiration",
     introduction: "Design has never been my forte; however, by rever"
@@ -20,7 +29,6 @@ const PostData = [
     content: ""
   },*/
   {
-    id: 4,
     name: "making-smooth-animations",
     title: "Making Smooth Animations With CSS and HTML5 Canvas",
     time: "2/6/2017",
@@ -59,7 +67,6 @@ const PostData = [
       </div>
   },
   {
-    id: 3,
     name: "adding-mongodb",
     title: "Adding MongoDB",
     time: "2/5/2017",
@@ -340,7 +347,6 @@ class PostComment extends React.Component{
     </div>
   },
   {
-    id: 2,
     name: "comments-update",
     title: "Comments Update",
     time: "2/5/2017",
@@ -359,7 +365,6 @@ class PostComment extends React.Component{
     </div>
   },
   {
-    id: 1,
     name: "es6-arrow-functions",
     title: "ES6 Arrow Functions",
     time: "1/27/2017",
@@ -434,7 +439,6 @@ class PostComment extends React.Component{
     content: "For those who have a firm grasp of JavaScript or consider themselves intermediate JavaScript programmers, I would like to offer some resource to."
   },*/
   {
-    id:0,
     name: "hello-world",
     title: "Hello World",
     time: "1/21/2017",
@@ -448,7 +452,224 @@ class PostComment extends React.Component{
     The goal of this website is to provide small tips that developers can quickly start to implement in their own code. This site will cover many topics in the sphere of web development, so stay tuned :). 
     </p>
     </div>
+  },
+  /*{
+    name: "my-favorite-web-development-resources",
+    title: "My favorite web development resources",
+    time: "10/31/16",
+    mainImage: "HelloWorld.jpg",
+    keywords: "codepen,resources,javascript,dribbble,behance,css,html,IDE",
+    tags: "resources",
+    introduction: "In this post I will go over some of my favorite web development tools and resources! So, let's get started. Codepen has to be one of my favorite websites of all time! Basically, you can write html/css/javascript in an environment called a pen and publish it for others to see. The ui is very clean and easy to use and the codepen community is amazing as well. I've seen so many cool projects from browsing Codepen's public pen database; it can be really inspring and motivating! Below, I've included some pens that have impressed me.",
+    content:
+    <div>
+      <div style={{width: "100%", background: "rgba(230,0,0,.6)"}}>
+        <h2 style={{width: "160px", background: '#d33232', textAlign: 'center', color: 'white', marginTop: '100px', marginBottom: '0px'}}>Codepen.io</h2>
+      </div>
+      <p>
+      In this post I will go over some of my favorite web development tools and resources! So, let's get started.
+      </p>
+      <p>
+      Codepen has to be one of my favorite websites of all time! Basically, you can write html/css/javascript in an environment called a pen and publish it for others to see. The ui is very clean and easy to use and the codepen community is amazing as well. I've seen so many cool projects from browsing Codepen's public pen database; it can be really inspring and motivating! Below, I've included some pens that have impressed me.
+      </p>
+      <iframe height='380' scrolling='no' title='THREE Image Transition' src='//codepen.io/zadvorsky/embed/preview/PNXbGo/?height=380&theme-id=dark&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style={{width: "100%"}}>See the Pen <a href='https://codepen.io/zadvorsky/pen/PNXbGo/'>THREE Image Transition</a> by Szenia Zadvornykh (<a href='http://codepen.io/zadvorsky'>@zadvorsky</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+    </div>
+  },*/
+  {
+    name: "how-to-make-a-programming-language-in-javascript",
+    title: "How to make a programming language in JavaScript",
+    time: "10/23/16",
+    mainImage: "logo_JavaScript.png",
+    keywords: "programming,javascript,language,parser,token,lexer,node.js,node",
+    tags: "javascript,tutorial,node",
+    introduction: "For my first post, I have decided to write about something that has been quite interesting to me lately. I do not expect you to understand everything from this post! The only things I really want you to take away are a feeling for how awesome JavaScript can be and maybe a basic understanding of how to go about making a new programming language. It blows my mind that one can use a language such as JavaScript to create a whole new way of thinking and creating.",
+    content: 
+    <div>
+      <p>
+      For my first post, I have decided to write about something that has been quite interesting to me lately. I do not expect you to understand everything from this post! The only things I really want you to take away are a feeling for how awesome JavaScript can be and maybe a basic understanding of how to go about making a new programming language. It blows my mind that one can use a language such as JavaScript to create a whole new way of thinking and creating.
+      </p>
+      <p>
+      I will start with the setup and then I will explain the structure of a compiler which will compile the new language into JavaScript. Once I have gone over the setup and the structure of a compiler, I will briefly explain in detail how the compiler turns one language into another! There will be links to a few resources I've found helpful at the bottom.
+      </p>
+      <p>
+      The first step to setup for creating a programming language in JavaScript is downloading Node.js. Node.js gives the ability to run JavaScript outside the browser. This is useful for reading the files of the new language, running them through the compiler, and either executing all the compiled contents or pushing new files back out that are written in JavaScript so that they could possibly be run in the browser. The only other thing required is a text editor.
+      </p>
+      <p>
+      Once Node.js is installed a command prompt with node will be available which is what will be used to communicate with the JavaScript files on the computer. The cd command in the command prompt is then used to navigate to the desired directory where the compiler and the new language files are located. Once in the correct directory, the following command is what can be used to send the data of the new language file to the compiler.
+      </p>
+      <pre><PrismCode className="language-bash">
+      {`node compiler.js newLang.junk`}
+      </PrismCode></pre>
+      <p>
+      But for this to work there needs to be a few lines of code inserted into the compiler which I will explain later after I go over the structure of a compiler.
+      </p>
+      <p>
+      The structure of a compiler consists of a lexer and a parser. The lexer will take the text given to it and attempt to decipher the text. While the lexer runs through the text it outputs tokens of information about the text. These tokens contain information such as where a variable is, if there is a conditional statement, strings, numbers, expressions, and many other bits of information that will be useful when passed to the parser. The parser will then decide what to do with the tokens and run JavaScript or the language it is written in to execute the decisions it has made. I’ve made a small example below depicting the flow of our new language through the compiler.
+      </p>
+      <p>
+      Language(JunkScript):
+      </p>
+      <pre><PrismCode className="language-bash">
+      {
+      `"Hello World"
+MAKE VAR CandyBars >>> (5)
+MAKE VAR Money >>> (500)
+MAKE VAR CandyBarsCost >>> (200)
+MAKE VAR TotalCost >>> (_CandyBars * _CandyBarsCost)
+SHOUT _TotalCost`
+      }
+      </PrismCode></pre>
+      <p>
+      Lexer:
+      </p>
+      <pre><PrismCode className="language-bash">
+      {
+`"STRING: Hello World"
+"VAR: CandyBars"
+"EQUALS"
+"NUM: 5"
+"VAR: Money"
+"EQUALS"
+"NUM: 500"
+"VAR: CandyBarCost"
+"EQUALS"
+"NUM: 200"
+"VAR: TotalCost"
+"EQUALS"
+"EXPR: (CandyBars * CandyBarCost)"
+"PRINT"
+"VAR: TotalCost"`
+      }
+      </PrismCode></pre>
+      <p>
+      Parser(JavaScript):
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`"Hello Word";
+CandyBars = 5;
+Money = 500;
+CandyBarCost = 200;
+TotalCost = CandyBars * CandyBarCost;
+console.log(TotalCost);`
+      }
+      </PrismCode></pre>
+      <p>
+      Now, for the compiler to actually be useful it needs to get the data from the file with the new language, this is where node is very useful. All that is required are a few lines of JavaScript code that will send the data from a file into the compiler.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`var fs = require(‘fs’);
+fs.readFile(process.argv[2], function(err, data){
+  if(err){
+    return console.log(err);
+  }
+  compiler(data);
+}`
+      }
+      </PrismCode></pre>
+      <p>
+      The first line is getting the fs module from the node package manager(npm is a way to import useful tools to be used in programs). The fs module has a method called readfile which is used to read the third command line value. Now we can use that node command I explained earlier to get the new language file and send it's contents to the compiler. If there are any errors no data will be compiled and instead an error message should be returned.
+      </p>
+      <p>
+      The compiler then takes this data and runs it through the lexer and parser.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`function compiler(fileData){
+  var tokens = lexer(fileData);
+  parser(tokens);
+}`
+      }
+      </PrismCode></pre>
+      <p>
+      And there it is! The structure for a compiler. Now let's go a little deeper into how the compiler compiles.
+      </p>
+      <p>
+      The lexer in the real compiler I created before writing this post reads each character in the program file given to it. There is a tok(token) variable that has a character added to it after each new character is read. When the tok variable matches something significant such as SHOUT or VAR it is reset and a token representing that match is added to an array which will end up being sent off to the parser. Below is a simple representation of what I've described above.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`tokens = [];
+
+lex(file){
+  file = file.split('');
+  for(x in file){
+    char = file[x];
+    tok += char;
+
+    if(tok.match(&quot;SHOUT&quot;)){
+      tokens.push(&quot;SHOUT&quot;);
+      tok = &quot;&quot;;
+    }
+  }
+  return tokens
+}`
+      }
+      </PrismCode></pre>
+      <p>
+      The parser then reads through the tokens and deciphers them into actions to be taken.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`parser(tokens){
+  var i = 0;
+  while(i &lt; tokens.length){
+    var token = tokens[i]
+    if(token == &quot;PRINT&quot;){
+      console.log(tokens[i+1]);
+    }
+    i++
+  }
+}`        
+      }
+      </PrismCode></pre>
+      <p>
+      If I wanted to output a JavaScript file instead of executing actions in the parser I would only need to change a few lines of code. The dots represent code that I excluded for the example.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`compiledData = &quot;&quot;;
+
+parser(tokens){
+...
+  if(token == &quot;PRINT&quot;){
+    compiledData += &quot;console.log(\&quot;&quot; + tokens[i+1] + &quot;\&quot;);&quot;
+  }
+  i++
+}
+
+fs.writeFile('compiledFile.js', compiledData, function(err){
+  if(err){
+    return console.log(err);
+  }
+})`
+      }
+      </PrismCode></pre>
+      <p>
+      That is how you can make your own programming language in JavaScript!
+      </p><br/>
+      <b>Resources</b><br/>
+      Node.js<br/>
+      <a href="https://nodejs.org/en/">Node.js</a><br/>
+
+      Good explanations of lexer and parser<br/>
+      <a href="http://savage.net.au/Ron/html/graphviz2.marpa/Lexing.and.Parsing.Overview.html">http://savage.net.au/Ron/html/graphviz2.marpa/Lexing.and.Parsing.Overview.html</a><br/>
+      Tutorials for making a basic programming language in python.<br/>
+      <a href="https://www.youtube.com/playlist?list=PLBOh8f9FoHHiKx3ZCPxOZWUtZswrj2zI0">https://www.youtube.com/playlist?list=PLBOh8f9FoHHiKx3ZCPxOZWUtZswrj2zI0</a>
+      <p>(First video below)</p>
+      <Youtube
+        videoId={"pWAxiKdJF0c"}
+      />
+    </div>
   }
 ]
+
+PostData = PostData.map((post,i) => {
+  post.id = PostData.length - (i+1);
+  return post;
+});
 
 export default PostData;
