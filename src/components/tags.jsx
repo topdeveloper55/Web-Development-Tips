@@ -9,11 +9,14 @@ export class Tags extends React.Component {
     let allTags = postTags.split(',').reduce((obj, tag) => {
       obj[tag] = ++obj[tag] || 1;
       return obj;
-    },{});
+    },{})
+    let sortedTags = Object.keys(allTags).sort((a,b) => allTags[b]-allTags[a]);
     let tagsWithCount = [];
-    for(var key in allTags){
-      tagsWithCount.push(<Link className="tag indexTag" to={`/tags/${key.split(' ').join('-')}`}>{key} - <span>{allTags[key]}</span></Link>);
-    }
+    sortedTags.map((tag) =>{
+      tagsWithCount.push(<Link className="tag indexTag" to={`/tags/${tag.split(' ').join('-')}`}>{tag} - <span>{allTags[tag]}</span></Link>);
+    })
+      
+    console.log(tagsWithCount)
     return (
       //includes option to restrict how many tags are shown.
       <div className="tags">{tagsWithCount.slice(0,this.props.length || tagsWithCount.length)}</div>

@@ -6,13 +6,14 @@ import { Link } from 'react-router';
 class Search extends React.Component {
   render(){
     let name = this.props.location.query.content.toLowerCase();
-    let postTags = PostData.map(post => post.tags).join(',');
-    let matchingTags = postTags.split(',').reduce((arr, tag) => {
-      if(arr.indexOf(tag) === -1 && tag.toLowerCase().indexOf(name) != -1) {
+    let postTags = PostData.map(post => post.tags).join(',').split(',');
+    postTags = postTags.filter((tag,pos) => postTags.indexOf(tag) == pos);
+    let matchingTags = postTags.reduce((arr, tag, i) => {
+      if(tag.toLowerCase().indexOf(name) != -1) {
         arr.push(<Link className="tag indexTag" to={`/tags/${tag.split(' ').join('-')}`}>{tag}</Link>);
       }
       return arr;
-    },[]);
+    },[])
   
     let Data = PostData.reduce((arr, post) => {
       if(post.introduction.toLowerCase().indexOf(name) != -1 || post.title.toLowerCase().indexOf(name) != -1 || post.tags.toLowerCase().indexOf(name) != -1) {
