@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import {PrismCode} from 'react-prism';
 import Youtube from 'react-youtube';
-import Codepen from 'react-codepen';
+import Codepen from '../components/react-codepen.js';
 let PostData = [
   /*{
     name: "asda",
@@ -453,30 +453,84 @@ class PostComment extends React.Component{
     </p>
     </div>
   },
-  /*{
+  {
     name: "my-favorite-web-development-resources",
     title: "My favorite web development resources",
     time: "10/31/16",
-    mainImage: "HelloWorld.jpg",
+    mainImage: "bemocs-dribbble.jpg",
     keywords: "codepen,resources,javascript,dribbble,behance,css,html,IDE",
     tags: "resources",
-    introduction: "In this post I will go over some of my favorite web development tools and resources! So, let's get started. Codepen has to be one of my favorite websites of all time! Basically, you can write html/css/javascript in an environment called a pen and publish it for others to see. The ui is very clean and easy to use and the codepen community is amazing as well. I've seen so many cool projects from browsing Codepen's public pen database; it can be really inspring and motivating! Below, I've included some pens that have impressed me.",
+    introduction: "In this post I will go over some of my favorite web development tools and resources! Codepen has to be one of my favorite websites of all time! Basically, you can write html/css/javascript in an environment called a pen and publish it for others to see. The ui is very clean and easy to use and the codepen community is amazing as well. I've seen so many cool projects from browsing Codepen's public pen database; it can be really inspring and motivating! Below, I've included some pens that have impressed me.",
     content:
     <div>
-      <div style={{width: "100%", background: "rgba(230,0,0,.6)"}}>
-        <h2 style={{width: "160px", background: '#d33232', textAlign: 'center', color: 'white', marginTop: '100px', marginBottom: '0px'}}>Codepen.io</h2>
+      <p>
+      In this post I will go over some of my favorite web development tools and resources!
+      </p>
+      <div style={{width: "100%",lineHeight: "40px", background: "#49B293"}}>
+        <h2 style={{width: "160px", background: '#212A34', textAlign: 'center', color: 'white', textShadow: 'none', marginBottom: '0px'}}>Codepen.io</h2>
       </div>
-      <p>
-      In this post I will go over some of my favorite web development tools and resources! So, let's get started.
-      </p>
-      <p>
-      Codepen has to be one of my favorite websites of all time! Basically, you can write html/css/javascript in an environment called a pen and publish it for others to see. The ui is very clean and easy to use and the codepen community is amazing as well. I've seen so many cool projects from browsing Codepen's public pen database; it can be really inspring and motivating! Below, I've included some pens that have impressed me.
-      </p>
-      <iframe height='380' scrolling='no' title='THREE Image Transition' src='//codepen.io/zadvorsky/embed/preview/PNXbGo/?height=380&theme-id=dark&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style={{width: "100%"}}>See the Pen <a href='https://codepen.io/zadvorsky/pen/PNXbGo/'>THREE Image Transition</a> by Szenia Zadvornykh (<a href='http://codepen.io/zadvorsky'>@zadvorsky</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
+      <div style={{background: "#eee", margin: "0px"}}>
+        <a href="http://codepen.io/">http://codepen.io/</a>
+        <p style={{padding: "60px 20px 60px 20px", textIndent: "10px"}}>Codepen has to be one of my favorite websites of all time! Basically, you can write html/css/javascript in an environment called a pen and publish it for others to see. The ui is very clean and easy to use and the codepen community is amazing as well. I've seen so many cool projects from browsing Codepen's public pen database; it can be really inspring and motivating! Below, I've included some pens that have impressed me.</p>
+        <Codepen preview={true} height="450" theme="22356" hash="PNXbGo" tab="result" user="zadvorsky"></Codepen>
+        <Codepen preview={true} height="450" theme="22356" hash="BKJun" tab="result" user="saransh"></Codepen>
+        <Codepen preview={true} height="450" theme="22356" hash="YXxmYR" tab="result" user="Yakudoo"></Codepen>
+        <Codepen preview={true} height="450" theme="22356" hash="tqdmv" tab="result" user="at80"></Codepen>
+      </div>
+      <div style={{width: "100%",lineHeight: "40px", background: "#49B293"}}>
+        <h2 style={{width: "160px", background: '#212A34', textAlign: 'center', color: 'white', textShadow: 'none', marginBottom: '0px'}}>Codewars</h2>
+      </div>
+      <div style={{background: "#eee", margin: "0px"}}>
+        <a href="https://www.codewars.com/">https://www.codewars.com/</a>
+        <p style={{padding: "60px 20px 60px 20px", textIndent: "10px"}}>This website is a wonderful place to practice using a programming language with puzzles developed by other users of the site. There are programming puzzles for every skill level and many programming languages for every type of programmer. It is also a really nice site to use when you have a few spare minutes and want to practice some programming! I also highly recommend a website called codingame which has a wonderful community and more programming puzzles.</p>
+      </div>
+      <div style={{width: "100%",lineHeight: "40px", background: "#49B293"}}>
+        <h2 style={{width: "160px", background: '#212A34', textAlign: 'center', color: 'white', textShadow: 'none', marginBottom: '0px'}}>Repl.it</h2>
+      </div>
+      <div style={{background: "#eee", margin: "0px"}}>
+        <a href="https://repl.it/">https://repl.it/</a>
+        <p style={{padding: "60px 20px 60px 20px", textIndent: "10px"}}>One of the first online ide's (integrated development envoronment) that I used. It is a really nice way to test small snippits of code without needing to make a local file. I've really enjoyed using it because of its simplicity and ease of access.</p>
+      </div>
+      <div style={{width: "100%",lineHeight: "40px", background: "#49B293"}}>
+        <h2 style={{width: "220px", background: '#212A34', textAlign: 'center', color: 'white', textShadow: 'none', marginBottom: '0px'}}>Free Code Camp</h2>
+      </div>
+      <div style={{background: "#eee", margin: "0px"}}>
+        <a href="https://www.freecodecamp.com/">https://www.freecodecamp.com/</a><br/>
+        <p style={{padding: "60px 20px 60px 20px", textIndent: "10px"}}>One of the best sites to learn more about web development. The community is wonderful and very helpful, there are hundreds of hours of free content, and its organization is in a very linear fasion so you know exactly what to do next!</p>
+      </div>
+      <div style={{width: "100%",lineHeight: "40px", background: "#49B293"}}>
+        <h2 style={{width: "220px", background: '#212A34', textAlign: 'center', color: 'white', textShadow: 'none', marginBottom: '0px'}}>Dribble and Behance</h2>
+      </div>
+      <div style={{background: "#eee", margin: "0px",width:"100%"}}>
+        <a href="https://dribbble.com/">https://dribbble.com/</a><br/>
+        <a href="https://www.behance.net/">https://www.behance.net/</a>
+        <p style={{padding: "60px 20px 60px 20px", textIndent: "10px"}}>These sites are communities of designers and are actually quite similar to Codepen! I enjoy looking through them and collecting possible design ideas for projects I want to create. There are some days I just like scrolling through all of the eye candy and admiring the incredible talent of these two communities. Dribbble also has information on the color pallete used in a work which can be very helpful! I've included some interesting dribbble shots below!</p>
+        <div style={{width:"100%",display: "flex",flexFlow: "row wrap", justifyContent: "space-between", alignContent: "center"}}>
+        <img style={{height: "200px"}} src="https://d13yacurqjgara.cloudfront.net/users/329207/screenshots/3008623/bemocs_rei_4_dribbble.jpg" alt="dribbble image" />
 
+        <img style={{height: "200px"}} src="https://d13yacurqjgara.cloudfront.net/users/66340/screenshots/2580504/atlantic-animation-4.gif" alt="dribbble image" />
+
+        <img style={{height: "200px"}} src="https://d13yacurqjgara.cloudfront.net/users/257709/screenshots/3058528/shot_v5_50_.png" alt="dribbble image" />
+        </div>
+      </div><br/>
+      <div style={{width: "100%",height: "40px", lineHeight: "40px", background: "#49B293"}}>
+        <h2 style={{width: "160px", background: '#212A34', textAlign: 'center', color: 'white', textShadow: 'none', marginBottom: '0px'}}>Extras</h2>
+      </div>
+      <div style={{background: "#eee", margin: "0px"}}>
+        <b>Awwwards</b><br/>
+          <a href="http://www.awwwards.com/">http://www.awwwards.com/</a><br/>
+          A really interesting site that gives awards to websites based on critera such as creativity and design.<br/>
+        <b>Coolors.co</b><br/>
+          <a href="https://coolors.co/">https://coolors.co/</a><br/>
+          A color pallete generator and library that I enjoy using.<br/>
+      </div><hr/>
+      Images<br/>
+      <a href="https://dribbble.com/shots/1222571-Code-it">https://dribbble.com/shots/1222571-Code-it</a> by Griffin Moore<br/>
+<a href="https://dribbble.com/shots/2580504-Loading-Animation">https://dribbble.com/shots/2580504-Loading-Animation</a> by Alex Sailer<br/>
+<a href="https://dribbble.com/shots/3008623-REI-End-of-Summer">https://dribbble.com/shots/3008623-REI-End-of-Summer</a> by Brian Edward Miller<br/>
+<a href="https://dribbble.com/shots/3058528-landing-page">https://dribbble.com/shots/3058528-landing-page</a> by uixNinja
     </div>
-  },*/
+  },
   {
     name: "how-to-make-a-programming-language-in-javascript",
     title: "How to make a programming language in JavaScript",
