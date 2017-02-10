@@ -454,6 +454,194 @@ class PostComment extends React.Component{
     </div>
   },
   {
+    name: "an-introduction-to-higher-order-functions",
+    title: "An introduction to higher order functions",
+    time: "11/11/16",
+    mainImage: "wallhaven.jpg",
+    keywords: "javascript,functions,high order functions,functional programming",
+    tags: "javascript,functional programming",
+    introduction: "Higher order functions are often used to reduce the size and complexity of code. They may seem daunting at first, but I assure you that learning how to use them will save you many hours of pondering over for loops among other headaches that can arise from attempting to solve problems without them.",
+    content:
+    <div>
+      <p>
+      Higher order functions are often used to reduce the size and complexity of code. They may seem daunting at first, but I assure you that learning how to use them will save you many hours of pondering over for loops among other headaches that can arise from attempting to solve problems without them.
+      </p>
+      <p>
+      I will first go over what these functions are, then I will slowly build up a scenario with examples showing you why they can be useful, and finally I will offer some resources that I've used to learn about this concept.
+      </p>
+      <p>
+      So, A higher order function is a function that returns another function or is passed a function as an argument. That is basically all that makes it different from a normal function.
+      </p>
+      <p>
+      Before we get into writing a higher order function, let's start with a basic function that takes a word as input and outputs that word with an "s" added at the end.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`function addS(word){
+  return word + "s";
+}
+
+addS("Cat"); // will return "Cats"`
+      }
+      </PrismCode></pre>
+      <p>
+      If we wanted to log the result to the console
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`console.log(addS("Cat"));`
+      }
+      </PrismCode></pre>
+      <p>
+      Now, what if there was an array of words all needing an "s"?
+You would probably add a for loop in the addS function like so.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`var animals = ["Cat","Dog","Zebra"];
+
+function addS(array){
+  var result = [];
+  for(var word in array){
+    result.push(array[word] + "s");
+  }
+  return result;
+}
+
+addS(animals); // will return ["Cats","Dogs","Zebras"]`
+      }
+      </PrismCode></pre>
+      <p>
+      The for loop will go through each word, add an s to the word, and then push the new word to a result array which we return at the end.
+      </p>
+      <p>
+      But what if there was another array that had a bunch of numbers and we wanted to add two to each number in that array?
+      You could do what I did below.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`var numbers = [1,5,7];
+
+function addTwo(array){
+  var result = [];
+  for(var number in array){
+    result.push(array[number] + 2);
+  }
+  return result;
+}
+
+addTwo(numbers); // will return [3,7,9];`
+      }
+      </PrismCode></pre>
+      <p>
+      However, there is a lot of repeating code between the addS and the addTwo functions! This is where a higher order function comes in handy.
+Let's start by preparing the addS and addTwo functions to be passed into the higher order function.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`function addS(word){
+  return word + "s";
+}
+
+function addTwo(number){
+  return number + 2;
+}`
+      }
+      </PrismCode></pre>
+      <p>
+      These functions could already be used for single words or numbers, but now we can also use a higher order function to give arrays access to these two functions as well.
+I have written the higher order function called loop that will do the job needed.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`function loop(array, action){
+  var result = [];
+  for(var item in array){
+    result.push(action(array[item]));
+  }
+  return result;
+}`
+      }
+      </PrismCode></pre>
+      <p>
+      Now, if we put the code together and use it, the result will look like this.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`var numbers = [1,5,7];
+var animals = ["Cat","Dog","Zebra"];
+
+function addS(word){
+  return word + "s";
+}
+
+function addTwo(number){
+  return number + 2;
+}
+
+
+function loop(array, action){
+  var result = [];
+  for(var item in array){
+    result.push(action(array[item]));
+  }
+  return result;
+}
+
+loop(numbers, addTwo); // will return [3,7,9]
+loop(animals, addS); // will return ["Cats", "Dogs","Zebras"]`
+      }
+      </PrismCode></pre>
+      <p>
+      For example, if we were to see the loop function once it was called with loop(numbers, addTwo) , it would look like.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`function loop(numbers, addTwo){
+  var result = [];
+  for(var item in numbers){
+    result.push(addTwo(array[item]));
+  }
+  return result;
+}`
+      }
+      </PrismCode></pre>
+      <p>
+      If you have understood this example, congratulations! You now have a basic understanding of higher order functions. There is also a higher order function that is built into JavaScript and will make this code even easier to read and understand.
+      </p>
+      <pre><PrismCode className="language-javascript">
+      {
+`var numbers = [1,5,7];
+var animals = ["Cat","Dog","Zebra"];
+
+function addS(word){
+  return word + "s";
+}
+
+function addTwo(number){
+  return number + 2;
+}
+
+numbers.map(addTwo); // Will return [3,7,9]
+animals.map(addS); // Will return ["Cats","Dogs","Zebras"]`
+      }
+      </PrismCode></pre>
+      <p>
+      Basically, map can take a function as input and output a modified array according to what that function returns!
+      </p>
+      <p>
+      Some resources that I've really enjoyed on the topic.
+      </p>
+      <Youtube
+        videoId={"BMUiFMZr7vk"}
+      /><br/>
+      <a href="http://eloquentjavascript.net/05_higher_order.html">http://eloquentjavascript.net/05_higher_order.html</a><hr/>
+      Image<br/>
+
+      <a href="https://alpha.wallhaven.cc/wallpaper/33246">https://alpha.wallhaven.cc/wallpaper/33246</a> uploaded by mohammedtt
+    </div>
+  },
+  {
     name: "my-favorite-web-development-resources",
     title: "My favorite web development resources",
     time: "10/31/16",
@@ -654,9 +842,9 @@ lex(file){
     char = file[x];
     tok += char;
 
-    if(tok.match(&quot;SHOUT&quot;)){
-      tokens.push(&quot;SHOUT&quot;);
-      tok = &quot;&quot;;
+    if(tok.match("SHOUT")){
+      tokens.push("SHOUT");
+      tok = "";
     }
   }
   return tokens
@@ -672,7 +860,7 @@ lex(file){
   var i = 0;
   while(i &lt; tokens.length){
     var token = tokens[i]
-    if(token == &quot;PRINT&quot;){
+    if(token == "PRINT"){
       console.log(tokens[i+1]);
     }
     i++
@@ -685,12 +873,12 @@ lex(file){
       </p>
       <pre><PrismCode className="language-javascript">
       {
-`compiledData = &quot;&quot;;
+`compiledData = "";
 
 parser(tokens){
 ...
-  if(token == &quot;PRINT&quot;){
-    compiledData += &quot;console.log(\&quot;&quot; + tokens[i+1] + &quot;\&quot;);&quot;
+  if(token == "PRINT"){
+    compiledData += "console.log(\"" + tokens[i+1] + "\");"
   }
   i++
 }

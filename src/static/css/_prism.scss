@@ -53,6 +53,8 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata {
 	color: slategray;
+	background:transparent;
+	border:none;
 }
 
 .token.punctuation {

@@ -8,7 +8,7 @@ class Post extends React.Component {
 		let tags = this.props.tags.split(',').map(tag => <Link className="tag" to={`/tags/${tag.split(' ').join('-')}`}>{tag}</Link>);
 		let daysAgo = Math.floor(( Date.parse(new Date()) - Date.parse(this.props.time)) / 86400000);
 		//Turn to weeks if many many daysAgo
-		daysAgo = daysAgo > 49 ? Math.floor(109/7) + " weeks ago" : `${daysAgo} days ago`;
+		daysAgo = daysAgo > 49 ? Math.floor(daysAgo/7) + " weeks ago" : `${daysAgo} days ago`;
 		const randomEffect = Math.floor(Math.random() * (2 - 0) + 0) ? "fade-left" : "fade-right";
 		return (
 			<div className="post">
