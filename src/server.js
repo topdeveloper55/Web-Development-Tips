@@ -7,12 +7,14 @@ import { match, RouterContext } from 'react-router';
 import routes from './routes';
 import NotFound from './components/404.jsx';
 
+
 const app = new express()
 const server = new Server(app);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + "/static"))
 app.use(express.static(__dirname + "videos/"))
+
 //app.use(express.static("images"))
 var mongoRoutes = require('./routes/mongodb-routes');
 app.use("/", mongoRoutes);

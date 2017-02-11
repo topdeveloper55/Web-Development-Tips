@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import {PrismCode} from 'react-prism';
 import Youtube from 'react-youtube';
 import Codepen from '../components/react-codepen.js';
+import CodeEditor from '../components/code.jsx';
 let PostData = [
   /*{
     name: "asda",
@@ -28,6 +29,21 @@ let PostData = [
     introduction: "Until recently I was using strictly google fonts and was a little bit intimidated by using downloaded fonts. They can be hard to adopt, but since using downloaded fonts I've noticed that page loading is slightly faster and I've also had much more options for what sorts of fonts I want to use (Such as Igra, the font I am using for this website). I hope to convince you to give them a try.",
     content: ""
   },*/
+  {
+    name: "code-editor-update",
+    title: "Code Editor Update",
+    time: "2/11/2017",
+    mainImage: "editor.png",
+    keywords: "update,javascript,editor,interactive",
+    tags: "update,javascript",
+    introduction: "I have now added code to the website so that you can write and run your own code! I think this feature will come in handy for explaining and demostrating concepts. Note, that console.logs will appear in the developer console, You can make text appear on the page by just returning from a function or leaving out console.logs altogether. I will also be adding a special tag for posts that have interactive editors included. I've included some example code below that you can run.",
+    content: 
+    <div><p>I have now added code to the website so that you can write and run your own code! I think this feature will come in handy for explaining and demostrating concepts. Note, that console.logs will appear in the developer console, You can make text appear on the page by just returning from a function or leaving out console.logs altogether. I will also be adding a special tag for posts that have interactive editors included. I've included some example code below that you can run.</p>
+    <CodeEditor defaultCode="// Try writing some code :)
+function hello(x){ return x; }
+hello('world')"/>
+    </div>
+  },
   {
     name: "making-smooth-animations",
     title: "Making Smooth Animations With CSS and HTML5 Canvas",
