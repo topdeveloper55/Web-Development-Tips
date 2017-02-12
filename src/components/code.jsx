@@ -10,13 +10,20 @@ class CodeEditor extends React.Component{
     
     this.state = {
       code: this.props.defaultCode,
-      output: ""
-    }
+      output: "",
+      theme: 'tomorrow-night-bright'
+    };
   }
   updateCode(e) {
     this.setState({
       code: e
-    })
+    });
+  }
+  toggleTheme() {
+    let newTheme = this.state.theme == 'tomorrow-night-bright' ? 'default' : 'tomorrow-night-bright';
+    this.setState({
+      theme: newTheme
+    });
   }
   evalCode() {
     let newOutput = "";
@@ -27,23 +34,23 @@ class CodeEditor extends React.Component{
     }
     this.setState({
       output: newOutput 
-    })
+    });
   }
   render() {
     let options = {
       lineNumbers: true,
       mode: 'javascript',
-      theme: 'tomorrow-night-bright',
+      theme: this.state.theme,
       scrollbarStyle: 'null',
       lineWrapping: true
-    }
+    };
     return (
       <div>
       <CodeMirror ref="editor" width="100%" height="300px" value={this.state.code} onChange={this.updateCode.bind(this)} options={options}/>
-      <button onClick={this.evalCode.bind(this)}>Run</button>
+      <button onClick={this.evalCode.bind(this)}>Run</button><button onClick={this.toggleTheme.bind(this)}>Toggle Light/Dark</button>
       <p style={{background: "#eee",border: "1px solid #aaa"}}><small style={{color: "red",fontSize: "10px"}}>Output</small><br/>{this.state.output}</p>
       </div>
-    )
+    );
   }
 }
 
