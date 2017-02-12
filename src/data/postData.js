@@ -41,7 +41,8 @@ let PostData = [
     <div><p>I have now added code to the website so that you can write and run your own code! I think this feature will come in handy for explaining and demostrating concepts. Note, that console.logs will appear in the developer console, You can make text appear on the page by just returning from a function or leaving out console.logs altogether. I will also be adding a special tag for posts that have interactive editors included. I've included some example code below that you can run.</p>
     <CodeEditor defaultCode="// Try writing some code :)
 function hello(x){ return x; }
-hello('world')"/>
+console.log(hello('world')); //Log to the developer console.
+hello('world') //Print result on the page."/>
     </div>
   },
   {
