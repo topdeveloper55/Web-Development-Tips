@@ -19,9 +19,8 @@ class CodeEditor extends React.Component{
     })
   }
   evalCode() {
-    console.log(this.state.code.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm,""))
     this.setState({
-      output: (() => {return eval(this.state.code.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$|(<script>)|eval|document\.write/gm,""))})()
+      output: (() => {return eval(this.state.code.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$|(<script>)|eval|XMLHttpRequest|document\.write/gm,""))})()
     })
   }
   render() {
@@ -33,7 +32,7 @@ class CodeEditor extends React.Component{
       <div>
       <CodeMirror width="100%" height="300px" value={this.state.code} onChange={this.updateCode.bind(this)} options={options}/>
       <button onClick={this.evalCode.bind(this)}>Run</button>
-      <p>{this.state.output}</p>
+      <p style={{background: "#eee",border: "1px solid #aaa"}}><small style={{color: "red",fontSize: "10px"}}>Output</small><br/>{this.state.output}</p>
       </div>
     )
   }
