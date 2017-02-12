@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /search
 Disallow: /*?
 Disallow: /posts/0
 Disallow: /posts/2
