@@ -7,6 +7,7 @@ class Post extends React.Component {
 		let mainImage = this.props.mainImage ? <img src={`/img/${this.props.mainImage}`} alt="Post header image"/> : "";
 		let tags = this.props.tags.split(',').map(tag => <Link className="tag" to={`/tags/${tag.split(' ').join('-')}`}>{tag}</Link>);
 		let daysAgo = Math.floor(( Date.parse(new Date()) - Date.parse(this.props.time)) / 86400000);
+		let codeEditor = this.props.editor ? <em style={{color: "red"}}>code editor included</em> : "";
 		//Turn to weeks if many many daysAgo
 		daysAgo = daysAgo > 49 ? Math.floor(daysAgo/7) + " weeks ago" : `${daysAgo} days ago`;
 		const randomEffect = Math.floor(Math.random() * (2 - 0) + 0) ? "fade-left" : "fade-right";
@@ -16,6 +17,7 @@ class Post extends React.Component {
 					<div className="mainImage">{mainImage}</div>
 					<h2 className="header">{this.props.title}</h2>
 					<time className="date" style={{left: daysAgo.length * 9}}>{this.props.time}</time>
+					{codeEditor}
 				</div>
 				<div className="postBody">
 					<hr className="seperator"/>

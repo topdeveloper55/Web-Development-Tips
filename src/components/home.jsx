@@ -11,7 +11,8 @@ class Home extends React.Component {
   render() {
     let Posts = PostData.reduce((arr,x,i) => {
       if(i < 3) {
-        arr.push(<Post key={x.id} id={x.id} name={x.name} title={x.title} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>)
+        x.editor = x.editor || false;
+        arr.push(<Post key={x.id} id={x.id} name={x.name} title={x.title} editor={x.editor} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>)
       }
       return arr;
     },[])

@@ -8,7 +8,8 @@ import Post from './indexPost.jsx';
 class Posts extends React.Component {
 	render() {
 		let AllPosts = PostData.map(x => {
-			return <Post key={x.id} id={x.id} name={x.name} title={x.title} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>;
+			x.editor = x.editor || false;
+			return <Post key={x.id} id={x.id} name={x.name} editor={x.editor} title={x.title} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>;
 		})
 		let AllDescription = PostData.map(x => {
 			return x.introduction;
