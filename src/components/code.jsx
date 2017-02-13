@@ -37,6 +37,12 @@ class CodeEditor extends React.Component{
     });
   }
   render() {
+    let outputClass = 'editorOutput';
+    let buttonsClass = 'editorButtons';
+    if(this.state.theme == 'default'){
+      outputClass = 'editorOutput lightEditorOutput';
+      buttonsClass = 'editorButtons lightEditorButtons';
+    }
     let options = {
       lineNumbers: true,
       mode: 'javascript',
@@ -45,10 +51,15 @@ class CodeEditor extends React.Component{
       lineWrapping: true
     };
     return (
-      <div>
-      <CodeMirror ref="editor" width="100%" height="300px" value={this.state.code} onChange={this.updateCode.bind(this)} options={options}/>
-      <button onClick={this.evalCode.bind(this)}>Run</button><button onClick={this.toggleTheme.bind(this)}>Toggle Light/Dark</button>
-      <p style={{background: "#eee",border: "1px solid #aaa"}}><small style={{color: "red",fontSize: "10px"}}>Output</small><br/>{this.state.output}</p>
+      <div className="editorContainer">
+      <div className={buttonsClass}>
+        <button onClick={this.evalCode.bind(this)}>Run</button>
+        <button onClick={this.toggleTheme.bind(this)}>Toggle Light/Dark</button>
+      </div>
+      <CodeMirror ref="editor" className="editor" value={this.state.code} onChange={this.updateCode.bind(this)} options={options}/>
+      <div className={outputClass}>
+        <small style={{color: "red",fontSize: "10px"}}>Output</small><br/>{this.state.output}
+      </div>
       </div>
     );
   }

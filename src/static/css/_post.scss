@@ -138,3 +138,56 @@ code {
   font-size:15px;
   font-family:"UbuntuMono",serif;
 }
+.editorContainer{
+  display:flex;
+  flex-flow: row wrap;
+}
+.editor {
+  width: 70%;
+  height: 300px;
+  @media(max-width: 750px){
+    min-width:100%;
+  }
+}
+
+.editorOutput {
+  width: 30%;
+  height: 300px;
+  background:lighten(black,3%);
+  color: white;
+  box-sizing: border-box;
+  padding:5px;
+  @media(max-width: 750px){
+    min-width: 100%;
+    height: 150px;
+  }
+}
+
+.lightEditorOutput {
+  background:darken(white,3%);
+  color: black;
+}
+
+.editorButtons {
+  width: 100%;
+  min-width:100%;
+  height: 40px;
+  background:lighten(black,5%);
+  button {
+    height: calc(100% - 5px);
+    cursor:pointer;
+    background:lighten(black,15%);
+    color:darken(white,10%);
+    margin:5px;
+    border:1px solid black;
+  }
+}
+
+.lightEditorButtons {
+  background:darken(white,5%);
+  button {
+    background:darken(white,15%);
+    color:lighten(black,10%);
+    border:1px solid white;
+  }
+}
