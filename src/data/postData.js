@@ -40,10 +40,14 @@ let PostData = [
     introduction: "I have now added code to the website so that you can write and run your own code! I think this feature will come in handy for explaining and demostrating concepts. Note, that console.logs will appear in the developer console, You can make text appear on the page by just returning from a function or leaving out console.logs altogether. I will also be adding a special tag for posts that have interactive editors included. I've included some example code below that you can run.",
     content: 
     <div><p>I have now added code to the website so that you can write and run your own code! I think this feature will come in handy for explaining and demostrating concepts. I will also be adding a special tag for posts that have interactive editors included. I've included some example code below that you can run.</p>
-    <CodeEditor defaultCode="// Try writing some code :)
+    <CodeEditor>
+    {
+`// Try writing some code :)
 function hello(x){ return x; }
 console.log(hello('world')); //Log to the developer console.
-hello('world') //Print result on the page."/>
+hello('world') //Print result on the page.`
+    }
+    </CodeEditor>
     </div>
   },
   {
@@ -389,6 +393,7 @@ class PostComment extends React.Component{
     mainImage: "ArrowFunction.jpg",
     keywords: "ECMAScript6,javascript code,javascript,tip,javascript array,js,functional programming",
     tags: "ECMAScript6,javascript,functional programming",
+    editor: true,
     introduction: "ECMAScript 6 brings many new features to JavaScript that improve the overall quality of ones code as well as reducing the time it takes to write code. I would like to share one of my favorite additions to the language with you, the arrow function.",
     content:
     <div>
@@ -434,8 +439,15 @@ class PostComment extends React.Component{
         }
       </PrismCode></pre>
       <p>
-      To be clear, arrow functions only make anonymous functions, so you can not make a named function using the syntax. I've also made a short video covering this post below.
+      To be clear, arrow functions only make anonymous functions, so you can not make a named function using the syntax. I've also made a short video covering this post below. There is also a challenge you can try below :).
       </p>
+      <CodeEditor test={{include: ["=>","map"], output: ["cats","horses","dogs","tigers","lions","seals","bears"]}}>
+      {
+`//Use map to add s to each item in my array of animals, make sure to use the arrow function syntax.
+
+var myAnimals = ['cat','horse','dog','tiger','lion','seal','bear']`
+      }
+      </CodeEditor>
       <div className="video">
         <video width="540" height="400" controls>
           <source src='/videos/ES6-Arrow-Functions.mp4' type="video/mp4"/>

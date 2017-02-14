@@ -163,6 +163,28 @@ code {
   }
 }
 
+.editorError,.editorSuccess {
+  height: calc(100% - 10px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0px 5px 0px 5px;
+  margin:5px;
+  position:absolute;
+  top:5px;
+  right:5px;
+}
+
+.editorError {
+  background:#ff0033;
+  color:lighten(#ff0033,30%);
+}
+
+.editorSuccess {
+  background:#00ff33;
+  color:white;
+}
+
 .lightEditorOutput {
   background:darken(white,3%);
   color: black;
@@ -172,6 +194,7 @@ code {
   width: 100%;
   min-width:100%;
   height: 40px;
+  position:relative;
   background:lighten(black,5%);
   button {
     height: calc(100% - 5px);
