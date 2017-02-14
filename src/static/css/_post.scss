@@ -157,6 +157,8 @@ code {
   color: white;
   box-sizing: border-box;
   padding:5px;
+  word-wrap: break-word;
+  font-family:monospace;
   @media(max-width: 750px){
     min-width: 100%;
     height: 150px;

@@ -50,6 +50,7 @@ class CodeEditor extends React.Component{
         error = <div className="editorSuccess">Good Job!</div>;
       }
     }
+    console.log(newOutput)
     this.setState({
       output: newOutput,
       error: error
@@ -79,7 +80,7 @@ class CodeEditor extends React.Component{
       </div>
       <CodeMirror ref="editor" className="editor" value={this.state.code} onChange={this.updateCode.bind(this)} options={options}/>
       <div className={outputClass}>
-        <small style={{color: "red",fontSize: "10px"}}>Output</small><br/>{this.state.output}
+        <small style={{color: "red",fontSize: "10px"}}>Output</small><br/>{JSON.stringify(this.state.output)}
       </div>
       </div>
     );
