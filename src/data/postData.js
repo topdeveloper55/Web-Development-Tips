@@ -38,11 +38,11 @@ let PostData = [
     keywords: "javascript,spread,es6,advanced",
     tags: 'javascript,ECMAScript6',
     editor: true,
-    introduction: "Another couple of my favorite ECMAScript6 features are the spread operator and destructuring assignment systax. Using these new features in JavaScript makes life just a little easier.",
+    introduction: "Another couple of my favorite ECMAScript6 features are the spread operator and destructuring assignment syntax. Using these new features in JavaScript makes life just a little easier.",
     content:
     <div>
-    <p>Another couple of my favorite ECMAScript6 features are the spread operator and destructuring assignment systax. Using these new features in JavaScript makes life just a little easier.</p>
-    <p>One of the main things I use the spread operator for is when I am not sure how many parameters I will be using in a function call. For example, let's say that there is a function being used in an ecommerce website. It takes all items that are passed to the function and pushes them to a shopping cart.</p>
+    <p>Another couple of my favorite ECMAScript6 features are the spread operator and destructuring assignment syntax. Using these new features in JavaScript makes life just a little easier.</p>
+    <p>One of the main things I use the spread operator for is when I am not sure how many parameters I will be using in a function call. For example, let's say that there is a function being used in an e-commerce website. It takes all items that are passed to the function and pushes them to a shopping cart.</p>
     <pre><PrismCode className="language-javascript">
     {
 `var shoppingCart = [];
