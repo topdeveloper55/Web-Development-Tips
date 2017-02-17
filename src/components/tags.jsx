@@ -16,7 +16,6 @@ export class Tags extends React.Component {
       tagsWithCount.push(<Link className="tag indexTag" to={`/tags/${tag.split(' ').join('-')}`}>{tag} - <span>{allTags[tag]}</span></Link>);
     })
       
-    console.log(tagsWithCount)
     return (
       //includes option to restrict how many tags are shown.
       <div className="tags">{tagsWithCount.slice(0,this.props.length || tagsWithCount.length)}</div>

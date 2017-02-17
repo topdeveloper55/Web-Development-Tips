@@ -52,4 +52,4 @@ module.exports = {
       dead_code: true
     })
   ]
-}
+};

@@ -1,7 +1,12 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 const isBrowser = typeof window !== 'undefined';
-isBrowser ? require('codemirror/mode/javascript/javascript') : undefined;
+isBrowser ? function(){
+  require('codemirror/mode/javascript/javascript');
+  require('codemirror/addon/lint/lint');
+  require('codemirror/addon/lint/javascript-lint');
+}() : undefined;
+
 import _ from 'underscore';
 
 class CodeEditor extends React.Component{
@@ -37,20 +42,24 @@ class CodeEditor extends React.Component{
     let error = "";
     if(this.props.test) {
       let include = this.props.test.include;
+      let notInclude = this.props.test.notInclude || [];
       let expectedOutput = this.props.test.output;
       include = include.map(item => code.indexOf(item).toString());
+      notInclude = notInclude.map(item => code.indexOf(item).toString());
       
       if(include.indexOf("-1") != -1) {
-        console.log("You did not use the necessary items in this exercise.")
+        console.log("You did not use the necessary items in this exercise.");
         error = <div className="editorError">You did not use the necessary items in this exercise.</div>;
+      } else if(notInclude.indexOf("-1") == -1) {
+        console.log("You still have some of following keywords in your program: " + notInclude);
+        error = <div className="editorError">You still have some of following keywords in your program: {notInclude}</div>;
       } else if(_.isEqual(newOutput,expectedOutput) === false) {
-        console.log("Oops, it looks like your output does not match expected output.")
+        console.log("Oops, it looks like your output does not match expected output.");
         error = <div className="editorError">Oops, it looks like your output does not match expected output.</div>;
       } else {
         error = <div className="editorSuccess">Good Job!</div>;
       }
     }
-    console.log(newOutput)
     this.setState({
       output: newOutput,
       error: error
@@ -69,7 +78,11 @@ class CodeEditor extends React.Component{
       mode: 'javascript',
       theme: this.state.theme,
       scrollbarStyle: 'null',
-      lineWrapping: true
+      lineWrapping: true,
+      lint: true,
+      gutters: [
+        'CodeMirror-lint-markers',
+      ]
     };
     return (
       <div className="editorContainer">

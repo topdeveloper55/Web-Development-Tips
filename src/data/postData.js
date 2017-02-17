@@ -4,6 +4,7 @@ import {PrismCode} from 'react-prism';
 import Youtube from 'react-youtube';
 import Codepen from '../components/react-codepen.js';
 import CodeEditor from '../components/code.jsx';
+
 let PostData = [
   /*{
     name: "asda",
@@ -29,6 +30,137 @@ let PostData = [
     introduction: "Until recently I was using strictly google fonts and was a little bit intimidated by using downloaded fonts. They can be hard to adopt, but since using downloaded fonts I've noticed that page loading is slightly faster and I've also had much more options for what sorts of fonts I want to use (Such as Igra, the font I am using for this website). I hope to convince you to give them a try.",
     content: ""
   },*/
+  {
+    name: "javascript-spread-operator-and-destructuring-assignment-syntax",
+    title: "JavaScript Spread Operator and Destructuring Assignment Syntax",
+    time: "2/15/2017",
+    mainImage: "editor.png",
+    keywords: "javascript,spread,es6,advanced",
+    tags: 'javascript,ECMAScript6',
+    editor: true,
+    introduction: "Another couple of my favorite ECMAScript6 features are the spread operator and destructuring assignment systax. Using these new features in JavaScript makes life just a little easier.",
+    content:
+    <div>
+    <p>Another couple of my favorite ECMAScript6 features are the spread operator and destructuring assignment systax. Using these new features in JavaScript makes life just a little easier.</p>
+    <p>One of the main things I use the spread operator for is when I am not sure how many parameters I will be using in a function call. For example, let's say that there is a function being used in an ecommerce website. It takes all items that are passed to the function and pushes them to a shopping cart.</p>
+    <pre><PrismCode className="language-javascript">
+    {
+`var shoppingCart = [];
+function addToShoppingCart(...items) {
+  items.forEach(x => shoppingCart.push(x));
+  return shoppingCart;
+}
+
+addToShoppingCart("apples","fishing pole");`
+    }
+    </PrismCode></pre>
+    <p>By using the spread operator we can add as many parameters as is needed when we call our function. It is good, but there are ways that the function and the function call can be made better. What if we had no clue how many things were going to be passed into the function?</p>
+    <pre><PrismCode className="language-javascript">
+    {
+`var shoppingCart = [];
+function addToShoppingCart(...items) {
+  shoppingCart.push(...items);
+  return shoppingCart;
+}
+var myDynamicallyCreatedArray = ["apples","fishing pole"];
+addToShoppingCart(...myDynamicallyCreatedArray);`
+    }
+    </PrismCode></pre>
+    <p>The function call uses the spread operator to destructure the array and assign each available items spread parameter to each item in the array. The function still takes an unlimited number of arguments so everything works. The forEach loop is now replaced with a simple push to the cart by using the spread of the items spread and passing in the individual values to be pushed to the shoppingCart.</p>
+    <p>A more simple example of destructuring could be if we wanted to assign an array of three values to a function that takes three parameters. Instead of having to call <PrismCode className="language-javascript">takeParams(myArray[0], myArray[1], myArray[2]);</PrismCode> I can use the spread operator to do some destructuring assignment.</p>
+    <pre><PrismCode className="language-javascript">
+    {
+`function takeParams(x,y,z) {
+  console.log(x);
+  console.log(y);
+  console.log(z);
+}
+
+myArray = [1,2,3];
+
+takeParams(...myArray);`
+    }
+    </PrismCode></pre>
+    <p>A simpler way to use the spread operator in the shoppingCart example would be like below.</p>
+    <pre><PrismCode className="language-javascript">
+    {
+`var shoppingCart = [];
+function addToShoppingCart(items) {
+  shoppingCart.push(...items);
+  return shoppingCart;
+}
+var myDynamicallyCreatedArray = ["apples","fishing pole"];
+addToShoppingCart(myDynamicallyCreatedArray);`
+    }
+    </PrismCode></pre>
+    <p>This still works and is probably a little bit easier to reason about.</p>
+    <p>We could also take the push out of the function and use spread operators as a means to update the array.</p>
+    <pre><PrismCode className="language-javascript">
+    {
+`var shoppingCart = [];
+function addToShoppingCart(items) {
+  shoppingCart = [...shoppingCart, ...items];
+  return shoppingCart;
+}
+var myDynamicallyCreatedArray = ["apples","fishing pole"];
+addToShoppingCart(myDynamicallyCreatedArray);`
+    }
+    </PrismCode></pre>
+    <p>I hope that makes sense. Some helpful links on the two subjects below</p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator</a><br/>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a>
+    <p>Try out some of the challenges below if you want some practice!</p>
+    <CodeEditor test={{include: ["..."], notInclude: ["arguments"], output: ["can","waffle","grape juice","car"]}}>
+    {
+`//Update the function below to use the spread operator instead of the special arguments keyword
+
+var myItems = [];
+function storeItems() {
+  for(var x in arguments) {
+    myItems.push(arguments[x]);
+  }
+  
+  return myItems;
+}
+
+storeItems("can", "waffle", "grape juice", "car");`
+    }
+    </CodeEditor><br/>
+    <CodeEditor test={{include: ["..."], notInclude: ["push"], output: [1,2,3,4,5,6]}}>
+    {
+`//Concatinate two arrays into one array and assign the result to completeNumberArray. Use the spread operator.
+
+var firstNums = [1,2,3];
+var secondNums = [4,5,6];
+
+var completeNumberArray;
+completeNumberArray;`
+    }
+    </CodeEditor><br/>
+    <CodeEditor test={{include: ["..."], notInclude: ["push"], output: [5,"Hello",true,["Lorum","Ipsum",55,false]]}}>
+    {
+`//use destructuring to assign myNum, myStr, and myBool to values in variableValues (first three should be assigned to respective first three array items), then use the spread operator to assign the remaining items in the array to the remainingStuff variable.
+
+var variableValues = [5,"Hello",true,"Lorum","Ipsum",55,false];
+
+var myNum;
+var myStr;
+var myBool;
+var remainingStuff;
+
+//Your code here
+
+//End of your code
+
+function logVariables(){
+  return [myNum, myStr, myBool, remainingStuff];
+}
+
+logVariables();`
+    }
+    </CodeEditor>
+    </div>
+  },
   {
     name: "code-editor-update",
     title: "Code Editor Update",
@@ -445,7 +577,7 @@ class PostComment extends React.Component{
       {
 `//Use map to add s to each item in my array of animals, make sure to use the arrow function syntax.
 
-var myAnimals = ['cat','horse','dog','tiger','lion','seal','bear']`
+var myAnimals = ['cat','horse','dog','tiger','lion','seal','bear'];`
       }
       </CodeEditor>
       <div className="video">
