@@ -34,7 +34,7 @@ let PostData = [
     name: "javascript-spread-operator-and-destructuring-assignment-syntax",
     title: "JavaScript Spread Operator and Destructuring Assignment Syntax",
     time: "2/15/2017",
-    mainImage: "editor.png",
+    mainImage: "spread.jpg",
     keywords: "javascript,spread,es6,advanced",
     tags: 'javascript,ECMAScript6',
     editor: true,
