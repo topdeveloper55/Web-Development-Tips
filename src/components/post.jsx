@@ -12,13 +12,12 @@ class PostPage extends React.Component {
       name: "",
       comment: "",
       comments: []
-    })
+    });
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleName(e) {
-    this.setState({name: e.target.value})
-  }
-  handleComment(e) {
-    this.setState({comment: e.target.value})
+  handleChange(e) {
+    this.setState({[e.target.id]: e.target.value});
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -29,12 +28,13 @@ class PostPage extends React.Component {
       comment: this.state.comment,
       postName: this.props.params.name,
       date: fullDate
-    }
+    };
+    
     $.ajax({
       type: "POST",
       url: "/post-comments",
       data: JSON.stringify(body)
-    })
+    });
     
     this.updateComments();
     this.setState({name: "", comment: ""});
@@ -50,13 +50,13 @@ class PostPage extends React.Component {
               <div className="commentName">{comment.name}</div>
               <date>{comment.date}</date>
               <p className="commentBody">{comment.comment}</p>
-            </div>)
+            </div>);
           }
           return arr;
         },[]);
-        this.setState({comments: tempComments})
+        this.setState({comments: tempComments});
       }.bind(this)
-    })
+    });
   }
   componentDidMount(){
     this.updateComments();
@@ -64,7 +64,6 @@ class PostPage extends React.Component {
   render() {
     const name = this.props.params.name;
     const CurrentPost = PostData.filter(post => post.name == name)[0];
-    const randomEffect = Math.floor(Math.random() * (2 - 0) + 0) ? "fade-left" : "fade-right";
     return (
       <div>
         <div className="post postPageContainer">
@@ -86,15 +85,18 @@ class PostPage extends React.Component {
           <Link className="baseBtn" to="/posts">Go Back to Posts</Link>
         </div>
         <div className="commentForm">
-          <form onSubmit={this.handleSubmit.bind(this)}>
+          <form onSubmit={this.handleSubmit}>
             <div className="input">
-                <input type="text" id="name" className="textInput" value={this.state.name} onChange={this.handleName.bind(this)}/>
-                <label htmlFor="name">Name</label>
+              <input type="text" id="name" className="textInput" value={this.state.name} onChange={this.handleChange}/>
+              
+              <label htmlFor="name">Name</label>
             </div>
             <div className="input">
-                <textarea type="text" id="comment" className="textArea" value={this.state.comment} onChange={this.handleComment.bind(this)}/>
-                <label htmlFor="comment">Comment</label>
+              <textarea type="text" id="comment" className="textArea" value={this.state.comment} onChange={this.handleChange}/>
+              
+              <label htmlFor="comment">Comment</label>
             </div>
+            
             <button className="baseBtn" type="submit">Comment</button>
           </form>
         </div>
@@ -102,7 +104,7 @@ class PostPage extends React.Component {
         {this.state.comments}
         </div>
       </div>
-    )
+    );
   }
 }
 

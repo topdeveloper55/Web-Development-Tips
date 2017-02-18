@@ -2,20 +2,11 @@ import React from 'react';
 import PostData from '../data/postData.js';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
-import Post from './indexPost.jsx';
+import AllPosts from './allPosts.jsx';
 import {Tags} from './tags.jsx';
 
 class Home extends React.Component {
-  
-  
   render() {
-    let Posts = PostData.reduce((arr,x,i) => {
-      if(i < 3) {
-        x.editor = x.editor || false;
-        arr.push(<Post key={x.id} id={x.id} name={x.name} title={x.title} editor={x.editor} tags={x.tags} time={x.time} mainImage={x.mainImage} intro={x.introduction} content={x.content}/>)
-      }
-      return arr;
-    },[])
     return (
       <div className="home_container">
 				<Helmet
@@ -25,10 +16,7 @@ class Home extends React.Component {
 						{name: "keywords", content: "website dev tips,dev tips,websitedevtips.com,javascript,css,html,html5,website,code, programming,learn to code"}
 					]}
 				/>
-        <div className="latestPosts">
-          <h1 className="header">Latest Posts</h1>
-          {Posts}
-        </div>
+        <AllPosts len={3} header="Latest Posts"/>
         <div className="popularTags">
           <h1 className="header">Popular Tags</h1>
           <Tags length={4}/>

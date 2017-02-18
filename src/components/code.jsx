@@ -1,10 +1,9 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
+
 const isBrowser = typeof window !== 'undefined';
 isBrowser ? function(){
   require('codemirror/mode/javascript/javascript');
-  require('codemirror/addon/lint/lint');
-  require('codemirror/addon/lint/javascript-lint');
 }() : undefined;
 
 import _ from 'underscore';

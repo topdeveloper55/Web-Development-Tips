@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import $ from 'jquery';
+
 class Contact extends React.Component {
 	constructor(props) {
 		super(props);
@@ -10,7 +11,9 @@ class Contact extends React.Component {
 			email: "",
 			title: "",
 			message: ""
-		})
+		});
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	handleSubmit(e) {
 		e.preventDefault();
@@ -22,27 +25,18 @@ class Contact extends React.Component {
     	title: this.state.title,
     	message: this.state.message,
     	date: fullDate
-    }
+    };
     
     $.ajax({
     	type: "POST",
     	url: "/post-contact",
     	data: JSON.stringify(message)
-    })
+    });
     
     this.setState({name: "", email: "", title: "", message: ""});
 	}
-	handleName(e){
-		this.setState({name: e.target.value})
-	}
-	handleEmail(e){
-		this.setState({email: e.target.value})
-	}
-	handleTitle(e){
-		this.setState({title: e.target.value})
-	}
-	handleMessage(e){
-		this.setState({message: e.target.value})
+	handleChange(e){
+		this.setState({[e.target.id]: e.target.value});
 	}
 	render() {
 		return (
@@ -56,23 +50,30 @@ class Contact extends React.Component {
 					]}
 				/>
 				<div className="contactForm" data-aos="fade-down-back" data-aos-once="true" data-aos-duration="1000">
-					<form onSubmit={this.handleSubmit.bind(this)}>
+					<form onSubmit={this.handleSubmit}>
             <div className="input">
-                <input type="text" id="name" className="textInput" value={this.state.name} onChange={this.handleName.bind(this)}/>
-                <label htmlFor="name">Name</label>
+              <input type="text" id="name" className="textInput" value={this.state.name} onChange={this.handleChange}/>
+              
+              <label htmlFor="name">Name</label>
+            </div>
+            
+            <div className="input">
+              <input type="text" id="email" className="textInput" value={this.state.email} onChange={this.handleChange}/>
+              
+              <label htmlFor="email">Email</label>
+            </div>
+            
+            <div className="input">
+              <input type="text" id="title" className="textInput" value={this.state.title} onChange={this.handleChange}/>
+              
+              <label htmlFor="title">Title</label>
             </div>
             <div className="input">
-                <input type="text" id="email" className="textInput" value={this.state.email} onChange={this.handleEmail.bind(this)}/>
-                <label htmlFor="email">Email</label>
+              <textarea type="text" id="message" className="textArea" value={this.state.message} onChange={this.handleChange}/>
+              
+              <label htmlFor="message">Message</label>
             </div>
-            <div className="input">
-                <input type="text" id="title" className="textInput" value={this.state.title} onChange={this.handleTitle.bind(this)}/>
-                <label htmlFor="title">Title</label>
-            </div>
-            <div className="input">
-                <textarea type="text" id="message" className="textArea" value={this.state.message} onChange={this.handleMessage.bind(this)}/>
-                <label htmlFor="message">Message</label>
-            </div>
+            
             <button className="baseBtn" type="submit">Send Message</button>
         	</form>
          </div>

@@ -10,7 +10,6 @@ html, body {
 	margin: 0;
 	overflow-x: hidden;
 	padding: 0;
-	
 }
 html {
 	background: rgba(255,255,255,.7) url('../img/background.png') repeat;
@@ -228,7 +227,8 @@ h2 {
 .tags_container,
 .tag_container,
 .search_container,
-.container_404 {
+.container_404,
+.allPosts{
 	align-items: center;
 	display: flex;
 	flex-flow: column wrap;
@@ -248,7 +248,8 @@ h2 {
 	}
 }
 .posts_container,
-.home_container{
+.home_container,
+.allPosts {
 	align-items: flex-start;
 	flex-flow: row wrap;
 }
@@ -265,7 +266,7 @@ h2 {
 		padding-top: 10px;
 	}
 }
-.latestPosts,
+.allPosts,
 .tag_container,
 .search_container {
 	display: flex;
