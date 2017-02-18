@@ -31,6 +31,73 @@ let PostData = [
     content: ""
   },*/
   {
+    name: "learn-these-skills-or-live-a-mediocre-life",
+    title: "Learn These Skills or Live a Mediocre Life",
+    time: "2/17/2017",
+    mainImage: "jim-rohn.jpg",
+    keywords: "personal development,jim rohn,soft skills",
+    tags: "soft skills,personal development",
+    introduction: "One facet of web development and life in general is soft skills. These sometimes mystical skills can be the difference between one person getting what they want out of life and another person barely getting by. I would like to make this a regular topic because without having the right mindset nothing is as possible as it might seem; However, with the right mindset, the sky is the limit.",
+    content:
+    <div>
+    <p>One facet of web development and life, in general, is soft skills. These sometimes mystical skills can be the difference between one person getting what they want out of life and another person barely getting by. I would like to make this a regular topic because without having the right mindset nothing is as possible as it might seem; however, with the right mindset, the sky is the limit.</p>
+    <p>Before dying in 2009, Jim Rohn was one of the most prominent business philosophers of his time and is highly regarded in the personal development community. I would like to share with you a two-hour seminar that he gave back in 1981. Jim talks about many soft skills with the overall theme of personal development. Now, since this is a long video, relax, grab something to drink, and take your time. Enjoy! (my notes on seminar below the video)</p>
+    <div className="youtubeContainer">
+      <Youtube videoId={"7WDPrDAM2Cc"}/> 
+    </div><br/>
+    <q>If you took all the money in the world and divided it up equally among everyone the money would eventually all end up in the same hands.</q>
+    <p>As for happiness, <q>it is not what you are getting, it is what you are becoming that matters.</q></p>
+    <q>Set goals</q><br/>
+    <q>You've got to be wise and careful.</q><br/>
+    <q>Emotions can either build or destroy.</q><br/>
+    <b><q>The <u>major</u> key to your better future is <u>you</u>.</q></b><br/>
+    <q>You can't get extra time.</q><br/>
+    <q>Value makes the difference in results. You can't get more time but you can create more value.</q><br/>
+    <q>You get paid for value, not time.</q><br/>
+    <q>To develop an above average income, become an above average person.</q><br/>
+    <q>For things to change with you, you've got to change.</q><br/>
+    <q>Make sure you aren't spending major time on minor things.</q><br/>
+    <q>You cannot change the seasons but you can change yourself.</q><br/>
+    <q>Learn how to handle the winters, nights, difficulties in life.</q><br/>
+    <q>Don't wish for fewer problems, wish for more skills.</q><br/>
+    <q>Take advantage of the springs of life.</q><br/>
+    <q>Learn to protect what you have started. All good will be attacked and all values must be defended.</q><br/>
+    <q>Take full responsibility for what happens to you. Don't complain and don't make apologies.</q><br/>
+    <q>It's not what happens but rather it's what you do that changes everything.</q><br/>
+    <q>Everyone has disappointments, what matters is how you deal with them.</q><br/>
+    <q><b>Be disciplined</b> and be excited about being disciplined.</q><br/>
+    <q>Start with a little discipline and build up to being more disciplined over time.</q><br/>
+    <q><b>Be self-motivated</b></q><br/>
+    <q>Good people are not trained, they are found.</q><br/>
+    <q>Find out how things work. There are enough problems, the ideas to solve them are just not there yet. Make a journal of ideas.</q><br/>
+    <q>If you wish to be happy, study happiness. If you wish to be successful, study success.</q><br/>
+    <q>You may not be able to do all you find out, but you should find out all you can do.</q><br/>
+    <q><b>Be curious.</b></q><br/>
+    <p>Be childlike in:</p>
+    <ul>
+      <li>Curiosity</li>
+      <li>Excitement</li>
+      <li>Faith (not skeptical)</li>
+      <li>Trust</li>
+    </ul>
+    <q>Become a good reader. One book could save you five years.</q><br/>
+    <q>You don't have to like the information given to you, but you should still learn from it.</q><br/>
+    <q>Ignorance is not bliss</q><br/>
+    <q>Learn to get on the good side of the way things work.</q><br/>
+    <q>The law of use. Whatever you don't use, you loose.</q><br/>
+    <q>The law of sowing and reaping. Whatever you sow, you shall reap.</q><br/>
+    <q>We all have a choice, make a living or design a life.</q><br/>
+    <q>If you had enough reasons you could do the most incredible things.</q><br/>
+    <q>Reasons come first, answers come second.</q><br/>
+    <q>Find out what turns you off.</q><br/>
+    <q>It's the journey, not the money.</q><br/>
+    <q>Wealth is not a matter of intelligence, it is a matter of inspiration.</q><br/>
+    <q>Don't loose your dreams, do some dreaming.</q><br/>
+    <q>Celebrate your achievements.</q><br/>
+    <q>All day we're being effected by our goals. From the way we talk to the way we walk, goals are affecting our personality.</q>
+    </div>
+  },
+  {
     name: "javascript-spread-operator-and-destructuring-assignment-syntax",
     title: "JavaScript Spread Operator and Destructuring Assignment Syntax",
     time: "2/15/2017",
