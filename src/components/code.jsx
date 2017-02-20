@@ -9,7 +9,7 @@ import $ from 'jquery';
 class CodeEditor extends React.Component{
   constructor(props){
     super(props);
-    console.log(this.props.children.javascript)
+
     this.state = {
       javascript: this.props.children.javascript || "",
       html: this.props.children.html || "",

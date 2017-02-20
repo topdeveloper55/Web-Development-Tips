@@ -47,21 +47,73 @@ let PostData = [
     content:
     <div>
     <p>The editor has been updated so you can now write HTML, CSS, and JavaScript in some editors! JavaScript exclusive editors will now show console.log's and now have a special method called code.submit for submitting code for testing in challenges.</p>
-    <p>Here is a full JavaScript, HTML, CSS editor.</p>
+    <p>Here is the new full JavaScript, HTML, CSS editor.</p>
     <CodeEditor modes={["html","css","javascript"]}>
     {{
     "javascript": 
-`var hello = "world";`,
+`var hello = "world";
+console.log(hello)`,
     "html":
-`<h1>Hello World</h1>`,
+`<button class="btn default blue">게익</button>
+<button class="btn default red">학교</button>
+<button class="btn default green">안녕</button>
+<button class="btn default yellow">피자</button><br>
+<button class="btn round yellow">시간</button>
+<button class="btn round red">장소</button>
+<button class="btn round green">모야</button><br>
+<button class="btn long blue">김사합니다!!</button>`,
     "css":
-`h1 {
-  background:blue;
-  color:white;
-  border:1px solid black;
-  box-shadow:2px 2px 2px rgba(0,0,0,.2);
-  text-shadow:2px 2px black;
-  font-family:sans-serif;
+`.yellow {
+  background-color: #FDE74C;
+}
+
+.green {
+  background-color: #9BC53D;
+}
+
+.red {
+  background-color: #E55934;
+}
+
+.blue {
+  background-color: #5BC0EB;
+}
+
+.default {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.round {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.long {
+  width: 200px;
+}
+
+.btn {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+  box-shadow: inset 3px 3px 0px rgba(250, 250, 250, 0.3), inset -3px -3px 0px rgba(0, 0, 0, 0.2), 2px 2px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px black;
+  cursor: pointer;
+}
+.btn:hover {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.1), inset -3px -3px 0px rgba(250, 250, 250, 0.2), 2px 2px transparent;
+  margin-left: 2px;
+  color: white;
+  text-shadow: 1px 1px #5BC0EB;
 }`
     }}
     </CodeEditor>
