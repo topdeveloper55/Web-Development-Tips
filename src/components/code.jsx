@@ -158,10 +158,12 @@ class CodeEditor extends React.Component{
       buttonsClass = 'editorButtons lightEditorButtons';
     } else {
       if(this.onlyJavaScript() === false){
-        let style = document.createElement('style');
-        style.type = 'text/css';
-        style.innerHTML = `*{color: white; background: #222; font-family: monospace;}`;
-        $(this.refs.iframe).contents().find('head').html(style);
+        $(document).ready(() => {
+          let style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = `*{color: white; background: #222; font-family: monospace;}`;
+          $(this.refs.iframe).contents().find('head').html(style);
+        })
       }
     }
     let languageButtons = [];
