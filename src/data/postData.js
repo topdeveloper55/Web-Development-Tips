@@ -30,6 +30,51 @@ let PostData = [
     introduction: "Until recently I was using strictly google fonts and was a little bit intimidated by using downloaded fonts. They can be hard to adopt, but since using downloaded fonts I've noticed that page loading is slightly faster and I've also had much more options for what sorts of fonts I want to use (Such as Igra, the font I am using for this website). I hope to convince you to give them a try.",
     content: ""
   },*/
+  /*{
+    name: "string-interpolation-with-javascript",
+    title: "String Interpolation With JavaScript",
+    time: "2/18/2017",
+    main
+  }*/
+  {
+    name: "code-editor-update-html-css-javascript",
+    title: "Code Editor Update: HTML, CSS, JavaScript",
+    time: "2/18/2017",
+    mainImage: "editor.png",
+    keywords: "update,html5,html,css3,javascript,css,editor,code",
+    tags: "update,html,css,javascript",
+    introduction: "The editor has been updated so you can now write HTML, CSS, and JavaScript in some editors! JavaScript exclusive editors will now show console.log's and now have a special method called code.submit for submitting code for testing in challenges.",
+    content:
+    <div>
+    <p>The editor has been updated so you can now write HTML, CSS, and JavaScript in some editors! JavaScript exclusive editors will now show console.log's and now have a special method called code.submit for submitting code for testing in challenges.</p>
+    <p>Here is a full JavaScript, HTML, CSS editor.</p>
+    <CodeEditor modes={["html","css","javascript"]}>
+    {{
+    "javascript": 
+`var hello = "world";`,
+    "html":
+`<h1>Hello World</h1>`,
+    "css":
+`h1 {
+  background:blue;
+  color:white;
+  border:1px solid black;
+  box-shadow:2px 2px 2px rgba(0,0,0,.2);
+  text-shadow:2px 2px black;
+  font-family:sans-serif;
+}`
+    }}
+    </CodeEditor>
+    <p>And here is the newly updated JavaScript editor.</p>
+    <CodeEditor modes={["javascript"]}>
+    {{
+    "javascript": 
+`var answer = "Hello World";
+code.submit(answer)`
+    }}
+    </CodeEditor>
+    </div>
+  },
   {
     name: "learn-these-skills-or-live-a-mediocre-life",
     title: "Learn These Skills or Live a Mediocre Life",
@@ -177,8 +222,9 @@ addToShoppingCart(myDynamicallyCreatedArray);`
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator</a><br/>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a>
     <p>Try out some of the challenges below if you want some practice!</p>
-    <CodeEditor test={{include: ["..."], notInclude: ["arguments"], output: ["can","waffle","grape juice","car"]}}>
-    {
+    <CodeEditor modes={["javascript"]} test={{include: ["..."], notInclude: ["arguments"], output: ["can","waffle","grape juice","car"]}}>
+    {{
+    "javascript":
 `//Update the function below to use the spread operator instead of the special arguments keyword
 
 var myItems = [];
@@ -190,22 +236,24 @@ function storeItems() {
   return myItems;
 }
 
-storeItems("can", "waffle", "grape juice", "car");`
-    }
+code.submit(storeItems("can", "waffle", "grape juice", "car"));`
+    }}
     </CodeEditor><br/>
-    <CodeEditor test={{include: ["..."], notInclude: ["push"], output: [1,2,3,4,5,6]}}>
-    {
+    <CodeEditor modes={["javascript"]} test={{include: ["..."], notInclude: ["push"], output: [1,2,3,4,5,6]}}>
+    {{
+    "javascript":
 `//Concatinate two arrays into one array and assign the result to completeNumberArray. Use the spread operator.
 
 var firstNums = [1,2,3];
 var secondNums = [4,5,6];
 
 var completeNumberArray;
-completeNumberArray;`
-    }
+code.submit(completeNumberArray);`
+    }}
     </CodeEditor><br/>
-    <CodeEditor test={{include: ["..."], notInclude: ["push"], output: [5,"Hello",true,["Lorum","Ipsum",55,false]]}}>
-    {
+    <CodeEditor modes={["javascript"]} test={{include: ["..."], notInclude: ["push"], output: [5,"Hello",true,["Lorum","Ipsum",55,false]]}}>
+    {{
+    "javascript":
 `//use destructuring to assign myNum, myStr, and myBool to values in variableValues (first three should be assigned to respective first three array items), then use the spread operator to assign the remaining items in the array to the remainingStuff variable.
 
 var variableValues = [5,"Hello",true,"Lorum","Ipsum",55,false];
@@ -223,8 +271,8 @@ function logVariables(){
   return [myNum, myStr, myBool, remainingStuff];
 }
 
-logVariables();`
-    }
+code.submit(logVariables());`
+    }}
     </CodeEditor>
     </div>
   },
@@ -239,13 +287,14 @@ logVariables();`
     introduction: "I have now added code to the website so that you can write and run your own code! I think this feature will come in handy for explaining and demostrating concepts. Note, that console.logs will appear in the developer console, You can make text appear on the page by just returning from a function or leaving out console.logs altogether. I will also be adding a special tag for posts that have interactive editors included. I've included some example code below that you can run.",
     content: 
     <div><p>I have now added code to the website so that you can write and run your own code! I think this feature will come in handy for explaining and demostrating concepts. I will also be adding a special tag for posts that have interactive editors included. I've included some example code below that you can run.</p>
-    <CodeEditor>
-    {
+    <CodeEditor modes={["javascript"]}>
+    {{
+    "javascript":
 `// Try writing some code :)
 function hello(x){ return x; }
-console.log(hello('world')); //Log to the developer console.
-hello('world') //Print result on the page.`
-    }
+console.log(hello('Hello World'));
+// code.submit(answer); is used for submitting code for challenges`
+    }}
     </CodeEditor>
     </div>
   },
@@ -640,7 +689,7 @@ class PostComment extends React.Component{
       <p>
       To be clear, arrow functions only make anonymous functions, so you can not make a named function using the syntax. I've also made a short video covering this post below. There is also a challenge you can try below :).
       </p>
-      <CodeEditor test={{include: ["=>","map"], output: ["cats","horses","dogs","tigers","lions","seals","bears"]}}>
+      <CodeEditor modes={["javascript"]} test={{include: ["=>","map"], output: ["cats","horses","dogs","tigers","lions","seals","bears"]}}>
       {
 `//Use map to add s to each item in my array of animals, make sure to use the arrow function syntax.
 

@@ -150,15 +150,9 @@ code {
   }
 }
 
-.editorOutput {
+.editorOutput{
   width: 30%;
   height: 300px;
-  background:lighten(black,3%);
-  color: white;
-  box-sizing: border-box;
-  padding:5px;
-  word-wrap: break-word;
-  font-family:monospace;
   @media(max-width: 750px){
     min-width: 100%;
     height: 150px;
@@ -185,11 +179,6 @@ code {
 .editorSuccess {
   background:#00ff33;
   color:white;
-}
-
-.lightEditorOutput {
-  background:darken(white,3%);
-  color: black;
 }
 
 .editorButtons {
