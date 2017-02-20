@@ -127,7 +127,7 @@ code.submit(answer)`
     </CodeEditor>
     </div>
   },
-  {
+  /*{
     name: "learn-these-skills-or-live-a-mediocre-life",
     title: "Learn These Skills or Live a Mediocre Life",
     time: "2/17/2017",
@@ -193,7 +193,7 @@ code.submit(answer)`
     <q>Celebrate your achievements.</q><br/>
     <q>All day we're being effected by our goals. From the way we talk to the way we walk, goals are affecting our personality.</q>
     </div>
-  },
+  },*/
   {
     name: "javascript-spread-operator-and-destructuring-assignment-syntax",
     title: "JavaScript Spread Operator and Destructuring Assignment Syntax",
