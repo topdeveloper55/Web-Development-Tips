@@ -742,11 +742,12 @@ class PostComment extends React.Component{
       To be clear, arrow functions only make anonymous functions, so you can not make a named function using the syntax. I've also made a short video covering this post below. There is also a challenge you can try below :).
       </p>
       <CodeEditor modes={["javascript"]} test={{include: ["=>","map"], output: ["cats","horses","dogs","tigers","lions","seals","bears"]}}>
-      {
+      {{
+      "javascript":
 `//Use map to add s to each item in my array of animals, make sure to use the arrow function syntax.
 
 var myAnimals = ['cat','horse','dog','tiger','lion','seal','bear'];`
-      }
+      }}
       </CodeEditor>
       <div className="video">
         <video width="540" height="400" controls>
