@@ -64,6 +64,22 @@ class CodeEditor extends React.Component{
     this.setState({
       theme: newTheme
     });
+    
+    if(newTheme == 'default'){
+      if(this.onlyJavaScript() === false){
+        let style = document.createElement('style');
+        style.type = 'text/css';
+        style.innerHTML = `*{color: black; background: #eee; font-family: monospace;}`;
+        $(this.refs.iframe).contents().find('head').html(style);
+      }
+    } else {
+      if(this.onlyJavaScript() === false){
+        let style = document.createElement('style');
+        style.type = 'text/css';
+        style.innerHTML = `*{color: white; background: #222; font-family: monospace;}`;
+        $(this.refs.iframe).contents().find('head').html(style);
+      }
+    }
   }
   evalCode() {
     let newOutput = "";
@@ -146,26 +162,11 @@ class CodeEditor extends React.Component{
     return this.props.modes.indexOf('javascript') != -1 && this.props.modes.length > 1;
   }
   render() {
-    let outputClass = 'editorOutput';
     let buttonsClass = 'editorButtons';
     if(this.state.theme == 'default'){
-      if(this.onlyJavaScript() === false){
-        let style = document.createElement('style');
-        style.type = 'text/css';
-        style.innerHTML = `*{color: black; background: #eee; font-family: monospace;}`;
-        $(this.refs.iframe).contents().find('head').html(style);
-      }
       buttonsClass = 'editorButtons lightEditorButtons';
-    } else {
-      if(this.onlyJavaScript() === false){
-        $(document).ready(() => {
-          let style = document.createElement('style');
-          style.type = 'text/css';
-          style.innerHTML = `*{color: white; background: #222; font-family: monospace;}`;
-          $(this.refs.iframe).contents().find('head').html(style);
-        })
-      }
     }
+    
     let languageButtons = [];
     this.props.modes.forEach(mode => {
       languageButtons.push(<button onClick={this.changeTab.bind(this, mode)}>{mode}</button>);
