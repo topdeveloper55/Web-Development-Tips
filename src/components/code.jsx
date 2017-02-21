@@ -4,7 +4,7 @@ import CodeMirror from 'react-codemirror';
 const isBrowser = typeof window !== 'undefined';
 
 import _ from 'underscore';
-import $ from 'jquery';
+
 
 class CodeEditor extends React.Component{
   constructor(props){

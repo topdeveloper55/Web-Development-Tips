@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import $ from 'jquery';
 
 class Contact extends React.Component {
 	constructor(props) {
