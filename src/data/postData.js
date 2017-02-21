@@ -111,7 +111,7 @@ console.log(hello)`,
   -webkit-transition: all .5s;
   transition: all .5s;
   box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.1), inset -3px -3px 0px rgba(250, 250, 250, 0.2), 2px 2px transparent;
-  margin-left: 2px;
+  transform: translate3d(2px,2px,0px);
   color: white;
   text-shadow: 1px 1px #5BC0EB;
 }`
