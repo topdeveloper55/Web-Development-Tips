@@ -4,22 +4,83 @@
 		<meta charset="utf-8">
 		<meta name="author" content="Devin Miller">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 		<title>WebsiteDevTips</title>
+		<style>
+			.spinner {
+				border: 5px solid #0f111f;
+				border-radius: 100%;
+				border-top: 5px solid #3498db;
+				border-right: 5px solid #3498db;
+				width: 50px;
+				height: 50px;
+				animation: rotate 2s linear infinite;
+				position:absolute;
+				left:calc(50% - 25px);
+				top:calc(50% + 50px);;
+			}
+			.secondSpinner {
+				border: 5px solid #0f111f;
+				border-radius: 100%;
+				border-top: 5px solid #d83439;
+				border-left: 5px solid #d83439;
+				width: 40px;
+				height: 40px;
+				animation: reverseRotate 1s linear infinite;
+				position:absolute;
+				left:calc(50% - 20px);
+				top:calc(50% + 55px);;
+			}
+			
+			.loader {
+				transition:.7s transform ease-in-out;
+			}
+			
+			.loaderDone {
+				transform: translate3d(0px,100%,0px);
+			}
+			
+			.loadingScreenText {
+				animation: pulse 1s linear infinite;
+			}
+			
+			@keyframes rotate{
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes reverseRotate{
+				0% {
+					transform: rotate(360deg);
+				}
+				100% {
+					transform: rotate(0deg);
+				}
+			}
+			@keyframes pulse{
+				0% {
+					opacity:1;
+				}
+				50% {
+					opacity: .2;
+				}
+			}
+		</style>
 	</head>
 	<body>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<div class="loader" style="display:flex;flex-flow:column wrap;justify-content:center;align-items:center;top:0;left:0;color:white;position:fixed;width:100%;height:100%;background:#0f111f;">
-			WebsiteDevTips is Loading
-			<img src="../rolling.gif" style="max-height:50px;"/>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" async></script>
+		
+		<div class="loader" style="font-family:monospace;font-size:20px;z-index:1000;display:flex;flex-flow:column wrap;justify-content:center;align-items:center;top:0;left:0;color:white;position:fixed;width:100%;height:100%;background:#0f111f;">
+			<p class="loadingScreenText">WebsiteDevTips is Loading<p>
+			<div class="spinner"></div>
+			<div class="secondSpinner"></div>
 		</div>
-		<script type="text/javascript">
-			$(window).load(function() {
-				$(".loader").fadeOut("slow");
-			})
-		</script>
 		<div id="container" class="container"><%- markup -%></div>
+		
 		<script src="/js/bundle.js" type="text/javascript" async></script>
 		<!-- Sitemap Generator -->
 		<script type="text/javascript">
