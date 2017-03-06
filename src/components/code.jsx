@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
+import ReactGA from 'react-ga';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -55,6 +56,11 @@ class CodeEditor extends React.Component{
     }
   }
   changeTab(tab, e){
+    ReactGA.event({
+      category: 'CodeEditors',
+      action: tab,
+      label: tab + " tab pressed"
+    })
     this.setState({
       tab: tab
     });
@@ -82,6 +88,11 @@ class CodeEditor extends React.Component{
     }
   }
   evalCode() {
+    ReactGA.event({
+      category: 'CodeEditors',
+      action: 'run',
+      label: 'run tab pressed'
+    })
     let newOutput = "";
     let javascript = this.state.javascript.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$|(<script>)|eval|XMLHttpRequest|document\.write/gm,"");
     if(this.refs.iframe){
