@@ -3,7 +3,6 @@ import CodeMirror from 'react-codemirror';
 import ReactGA from 'react-ga';
 
 const isBrowser = typeof window !== 'undefined';
-
 import _ from 'underscore';
 
 
@@ -27,6 +26,8 @@ class CodeEditor extends React.Component{
       require('codemirror/mode/javascript/javascript');
       require('codemirror/mode/htmlmixed/htmlmixed');
       require('codemirror/mode/css/css');
+      require('codemirror/addon/lint/lint.js');
+      require('codemirror/addon/lint/javascript-lint.js');
     })() : undefined;
   }
   updateCode(e) {
@@ -188,7 +189,11 @@ class CodeEditor extends React.Component{
       mode: mode,
       theme: this.state.theme,
       scrollbarStyle: 'null',
-      lineWrapping: true
+      lineWrapping: true,
+      lint: true,
+      gutters: [
+        'CodeMirror-lint-markers',
+      ]
     };
     
     let tabInput = this.state[this.state.tab];
