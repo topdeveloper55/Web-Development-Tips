@@ -4,6 +4,7 @@ import {PrismCode} from 'react-prism';
 import Youtube from 'react-youtube';
 import Codepen from '../components/react-codepen.js';
 import CodeEditor from '../components/code.jsx';
+import YoutubeContainer from '../components/youtube.jsx'
 
 let PostData = [
   /*{
@@ -963,9 +964,8 @@ animals.map(addS); // Will return ["Cats","Dogs","Zebras"]`
       <p>
       Some resources that I've really enjoyed on the topic.
       </p>
-      <Youtube
-        videoId={"BMUiFMZr7vk"}
-      /><br/>
+      <YoutubeContainer identifier="BMUiFMZr7vk"/>
+      <br/>
       <a href="http://eloquentjavascript.net/05_higher_order.html">http://eloquentjavascript.net/05_higher_order.html</a><hr/>
       Image<br/>
 
@@ -1233,9 +1233,8 @@ fs.writeFile('compiledFile.js', compiledData, function(err){
       Tutorials for making a basic programming language in python.<br/>
       <a href="https://www.youtube.com/playlist?list=PLBOh8f9FoHHiKx3ZCPxOZWUtZswrj2zI0">https://www.youtube.com/playlist?list=PLBOh8f9FoHHiKx3ZCPxOZWUtZswrj2zI0</a>
       <p>(First video below)</p>
-      <Youtube
-        videoId={"pWAxiKdJF0c"}
-      />
+      
+      <YoutubeContainer identifier="pWAxiKdJF0c"/>
     </div>
   }
 ]

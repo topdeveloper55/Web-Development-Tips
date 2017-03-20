@@ -10,7 +10,6 @@ function logPageView() {
   ReactGA.pageview(window.location.pathname);
 }
 
-
 class AppRoutes extends React.Component {
   render() {
     return (
